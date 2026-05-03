@@ -1,5 +1,11 @@
 import { FadeIn } from "./FadeIn";
 
+const STACK = [
+  ["Next.js", "Supabase"],
+  ["TypeScript", "Vercel"],
+  ["Stripe", "Claude Code"],
+];
+
 export function Intro() {
   return (
     <section className="py-40">
@@ -7,52 +13,49 @@ export function Intro() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           <div className="md:col-span-4">
             <FadeIn>
-              <span className="label">O mně</span>
-              <h2 className="headline-lg mt-4">
-                Kdo za tím
+              <span className="label">Příběh</span>
+              <h2 className="font-serif text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.02em] mt-4">
+                Ne další
                 <br />
-                stojí
+                <span className="text-[var(--text-secondary)]">„AI developer"</span>
               </h2>
             </FadeIn>
           </div>
 
-          <div className="md:col-span-8">
+          <div className="md:col-span-7 md:col-start-6 md:mt-16">
             <FadeIn delay={0.1}>
-              <div className="max-w-[560px] space-y-6">
-                <p className="body">
-                  Roky jsem prodával mobily. Bavilo mě to, ale nikdy jsem
-                  neprodával něco svého.
+              <div className="max-w-[560px] space-y-6 text-[17px] leading-[1.8] text-[var(--text-secondary)]">
+                <p>
+                  Prodával jsem mobily. Pak jsem zjistil, že mě víc baví
+                  stavět produkty než prodávat cizí.
                 </p>
-                <p className="body">
-                  Dneska stavím weby a datové projekty pro český a slovenský
-                  trh. Jazyk je přirozená výhoda — v Česku nemůžeš soutěžit
-                  s anglickým copy-paste a vyhrát.
+                <p>
+                  Dneska buduji weby a datové projekty pro český a
+                  slovenský trh. Cílím tam, kde jazyk vytváří přirozenou
+                  bariéru — a kde jeden člověk s AI nástrojem může
+                  vytvořit něco, co by jinak vyžadovalo celý tým.
                 </p>
-                <p className="body">
-                  Pracuju s AI nástroji. Ale tady končí podobnost s těmi,
-                  co ti na Instagramu slibují web za hodinu a 90 tisíc
-                  měsíčně. Nic z toho, co vidíš níže, nevzniklo jedním
-                  promptem. Každý projekt má za sebou stovky hodin —
-                  od nápadu přes data, design, testování až po marketing.
+                <p>
+                  Ale tady je ten rozdíl: každý projekt, který vidíte níž,
+                  prošel stovkami iterací. Žádný nevznikl jedním promptem.
+                  Žádný nevypadá jako tisíc dalších webů na internetu.
                 </p>
-                <p className="body">
-                  Nemám rád generické věci. Nemám rád zkratky, které vedou
-                  k průměru. A nemám rád weby, u kterých na první pohled
-                  poznáš, že je vytvořila umělá inteligence bez lidského
-                  dohledu.
+                <p className="text-[var(--text-primary)]">
+                  To je to, na čem mi záleží.
                 </p>
-                <p className="body">
-                  Myslím nekonvenčně. Hledám díry na trhu, ne trendy.
-                  A stavím věci, které mají smysl — ne věci, které dobře
-                  vypadají na LinkedIn postu.
-                </p>
+              </div>
 
-                <div className="pt-8">
-                  <span className="label">
-                    Next.js · TypeScript · Supabase · Vercel · Stripe ·
-                    Claude Code
+              <div
+                aria-hidden
+                className="mt-10 h-px w-[120px] bg-[var(--accent-dim)]"
+              />
+
+              <div className="mt-6 grid grid-cols-2 gap-x-16 gap-y-3 max-w-[360px]">
+                {STACK.flat().map((tech) => (
+                  <span key={tech} className="label">
+                    {tech}
                   </span>
-                </div>
+                ))}
               </div>
             </FadeIn>
           </div>
