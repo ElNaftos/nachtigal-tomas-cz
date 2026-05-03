@@ -1,57 +1,90 @@
+export type ProjectMockKey = "bladers" | "sazeni" | "saun" | "herni";
+
 export type Project = {
   number: string;
   name: string;
-  tagline: string;
-  description: string;
-  stack: string[];
   url: string;
   href: string;
-  image: string;
+  meta: string;
+  tagline: string;
+  description: string;
+  stats: Array<{ value: string; label: string }>;
+  tags: string[];
+  mock: ProjectMockKey;
+  accentColor: string;
 };
 
 export const projects: Project[] = [
   {
     number: "01",
     name: "Bladers.cz",
-    tagline: "Český TCG hub pro sběratele karet",
-    description:
-      "V Česku neexistoval jeden web, kde najdeš Pokémon i Magic karty s cenami z Cardmarketu. Tak jsem ho postavil. 114 000 karet, osobní sbírka s hodnotou v eurech, booster simulátor, kvízy. 22 000 stránek v Google indexu — a roste.",
-    stack: ["Next.js", "Supabase", "Vercel", "Scryfall API", "Pokémon TCG API"],
     url: "bladers.cz",
     href: "https://bladers.cz",
-    image: "/projects/bladers.webp",
+    meta: "2024 · TCG · Live",
+    tagline: "Český hub pro sběratele karet.",
+    description:
+      "Kompletní katalog Pokémon TCG a Magic: The Gathering napojený na Cardmarket. Vyhledávání, filtry podle setu a rarity, denně aktualizované ceny v eurech. Postaveno tak, aby zvládlo desítky tisíc karet bez kompromisů ve výkonu.",
+    stats: [
+      { value: "114K+", label: "karet" },
+      { value: "240", label: "setů" },
+      { value: "22K", label: "stránek" },
+    ],
+    tags: ["Next.js", "Supabase", "Cardmarket API", "Scryfall"],
+    mock: "bladers",
+    accentColor: "#8b5cf6",
   },
   {
     number: "02",
     name: "ChytreSazeni.cz",
-    tagline: "Matematické rozpisy pro loterie",
-    description:
-      "Většina hráčů Sportky tipuje naslepo. Tenhle nástroj jim dá systém — covering design, který pokryje maximum kombinací za minimum tiketů. Ne predikce. Čistá kombinatorika.",
-    stack: ["React", "Vite", "Supabase", "Stripe", "Lovable"],
     url: "chytresazeni.cz",
     href: "https://chytresazeni.cz",
-    image: "/projects/chytresazeni.webp",
+    meta: "2025 · Tool · Live",
+    tagline: "Matematika místo tipů od strejdy.",
+    description:
+      "Nástroj pro hráče Sportky, EuroJackpotu a Extra Renty. Zadáš čísla, systém vygeneruje optimální rozpis. Čistá matematika.",
+    stats: [
+      { value: "68 let", label: "dat" },
+      { value: "7 318", label: "tahů" },
+      { value: "14", label: "strategií" },
+    ],
+    tags: ["React", "Vite", "Supabase", "Stripe"],
+    mock: "sazeni",
+    accentColor: "#14b8a6",
   },
   {
     number: "03",
     name: "MapaSaun.cz",
-    tagline: "Každá sauna v Česku na jednom místě",
-    description:
-      "Adresář 207 saun s popisy, mapou a blogem. Plán: rozšířit na 2 000 saun ve střední Evropě.",
-    stack: ["Lovable", "Supabase", "cesky-hosting.cz"],
     url: "mapasaun.cz",
     href: "https://mapasaun.cz",
-    image: "/projects/mapasaun.webp",
+    meta: "2025 · Directory · Live",
+    tagline: "Všechny české sauny na jedné mapě.",
+    description:
+      "Adresář ručně ověřených saun po celém Česku. Filtry podle typu, teploty, ceny a kapacity. Mapa s rychlým náhledem, detail s otevírací dobou a recenzemi.",
+    stats: [
+      { value: "207", label: "saun" },
+      { value: "14", label: "krajů" },
+      { value: "100 %", label: "ověřeno" },
+    ],
+    tags: ["Lovable", "Supabase", "Mapbox", "Cloudflare"],
+    mock: "saun",
+    accentColor: "#f59e0b",
   },
   {
     number: "04",
     name: "HerniCentro.cz",
-    tagline: "Gaming e-shop pro kamaráda",
-    description:
-      "Redesign stávajícího e-shopu — custom hero sekce, Google Reviews widget, produktové bannery. Barter projekt, reálný výsledek.",
-    stack: ["eshop-rychle.cz", "Custom JS", "Playwright"],
     url: "hernicentro.cz",
     href: "https://hernicentro.cz",
-    image: "/projects/hernicentro.webp",
+    meta: "2026 · E-shop · Redesign",
+    tagline: "Gaming e-shop po redesignu.",
+    description:
+      "Redesign gaming e-shopu. Custom homepage, produktové bannery, Google Reviews widget.",
+    stats: [
+      { value: "−42 %", label: "bounce" },
+      { value: "2.1×", label: "conv." },
+      { value: "98", label: "lighthouse" },
+    ],
+    tags: ["eshop-rychle.cz", "Custom JS", "Playwright"],
+    mock: "herni",
+    accentColor: "#ef4444",
   },
 ];

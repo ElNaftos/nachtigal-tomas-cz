@@ -1,35 +1,22 @@
-import Image from "next/image";
+import type { ReactNode } from "react";
 
 type Props = {
-  src?: string;
-  alt?: string;
-  placeholder?: string;
+  url: string;
+  children: ReactNode;
 };
 
-export function BrowserFrame({ src, alt, placeholder }: Props) {
+export function BrowserFrame({ url, children }: Props) {
   return (
-    <div className="rounded-lg border border-[var(--border)] overflow-hidden bg-[var(--bg-elevated)]">
-      <div className="h-7 bg-[var(--bg-surface)] flex items-center px-3 gap-1.5 border-b border-[var(--border)]">
-        <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+    <div className="border border-[var(--rule)] bg-[var(--bg-elev)] rounded-[4px] overflow-hidden transition-colors duration-300 hover:border-[var(--ink-mute)]">
+      <div className="flex items-center gap-1.5 px-4 py-3 border-b border-[var(--rule)] bg-[#0b0b0e]">
+        <span className="w-[9px] h-[9px] rounded-full bg-[#3d3936]" />
+        <span className="w-[9px] h-[9px] rounded-full bg-[#3d3936]" />
+        <span className="w-[9px] h-[9px] rounded-full bg-[#3d3936]" />
+        <span className="ml-4 font-mono text-[10px] tracking-[0.05em] text-[var(--ink-mute)]">
+          {url}
+        </span>
       </div>
-      {src ? (
-        <Image
-          src={src}
-          alt={alt ?? ""}
-          width={1200}
-          height={800}
-          className="w-full h-auto block"
-          unoptimized
-        />
-      ) : (
-        <div className="aspect-[3/2] bg-[var(--bg-surface)] flex items-center justify-center">
-          <span className="text-[var(--text-muted)] text-sm font-mono">
-            {placeholder ?? "Screenshot"}
-          </span>
-        </div>
-      )}
+      <div className="aspect-[16/10] relative overflow-hidden">{children}</div>
     </div>
   );
 }

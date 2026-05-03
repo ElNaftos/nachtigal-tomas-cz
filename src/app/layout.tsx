@@ -6,18 +6,21 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   subsets: ["latin", "latin-ext"],
   weight: "400",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
   display: "swap",
 });
 

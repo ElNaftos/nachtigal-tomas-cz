@@ -4,25 +4,35 @@ import { ProjectItem } from "./ProjectItem";
 
 export function Projects() {
   return (
-    <section className="py-40 relative">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-8">
+    <section className="pt-[140px] pb-[200px] max-md:pt-24 max-md:pb-32">
+      <div className="max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
         <FadeIn>
-          <span className="label">Projekty</span>
-          <h2 className="headline-lg mt-4">Co jsem postavil</h2>
+          <div className="flex justify-between items-end mb-[120px] max-md:mb-16 pb-6 border-b border-[var(--rule-soft)] gap-6">
+            <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-none tracking-[-0.02em] m-0">
+              Vybrané <span className="it">projekty</span>
+            </h2>
+            <div className="meta text-right leading-[1.6]">
+              Projects / 04
+              <br />
+              2024 — 2026
+            </div>
+          </div>
         </FadeIn>
 
-        <div className="mt-24 relative">
+        <div className="relative">
           {/* Timeline line */}
           <div
             aria-hidden
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[var(--timeline-line)] -translate-x-1/2"
+            className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px -translate-x-px md:-translate-x-[0.5px]"
+            style={{
+              background:
+                "linear-gradient(180deg, transparent 0%, var(--rule) 8%, var(--rule) 92%, transparent 100%)",
+            }}
           />
 
-          <div className="space-y-32 md:space-y-40">
-            {projects.map((project, i) => (
-              <ProjectItem key={project.number} project={project} index={i} />
-            ))}
-          </div>
+          {projects.map((project, i) => (
+            <ProjectItem key={project.number} project={project} index={i} />
+          ))}
         </div>
       </div>
     </section>

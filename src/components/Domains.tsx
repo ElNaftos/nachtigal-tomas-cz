@@ -1,52 +1,73 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { domains } from "@/data/domains";
 import { FadeIn } from "./FadeIn";
 
 const EMAIL = "nachtigal.tom@proton.me";
 
+const itemVariants = {
+  hidden: { opacity: 0, x: -8 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
+};
+
 export function Domains() {
   return (
-    <section className="py-40">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-8">
+    <section className="pt-[140px] pb-[200px] max-md:pt-24 max-md:pb-32">
+      <div className="max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
         <FadeIn>
-          <span className="label">Na prodej</span>
-          <h2 className="font-serif text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.02em] mt-4">
-            Prémiové
-            <br />
-            <span className="text-[var(--text-secondary)]">české domény</span>
-          </h2>
-          <p className="text-[16px] leading-[1.7] text-[var(--text-secondary)] mt-6 max-w-[440px]">
-            Cena dohodou. Stáří, historie a SEO data k nahlédnutí na
-            vyžádání.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-[35fr_55fr] gap-12 md:gap-24 items-end mb-20">
+            <div>
+              <span className="label block mb-7">Domény / 05</span>
+              <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-none tracking-[-0.02em] m-0">
+                Prémiové české <span className="it">domény</span>
+              </h2>
+            </div>
+            <p
+              className="font-sans text-[16px] leading-[1.6] font-light text-[var(--ink-dim)] m-0 max-w-[460px]"
+              style={{ textWrap: "pretty" } as React.CSSProperties}
+            >
+              Sbírka silných českých domén k prodeji nebo dlouhodobému
+              pronájmu. Krátké, slovníkové, snadno zapamatovatelné.
+              Pro projekty, které potřebují důvěryhodný název.
+            </p>
+          </div>
         </FadeIn>
 
-        <div className="mt-16">
-          {domains.map((domain, i) => {
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
+          className="border-t border-[var(--rule-soft)]"
+        >
+          {domains.map((domain) => {
             const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
               domain.subject
             )}`;
             return (
-              <FadeIn key={domain.name} delay={Math.min(i * 0.04, 0.2)}>
-                <div className="group flex flex-col md:flex-row md:justify-between md:items-center gap-3 md:gap-8 py-7 border-b border-[var(--border)] hover:border-[var(--border-hover)] transition-colors">
-                  <div>
-                    <h3 className="font-serif text-[22px] leading-tight text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
-                      {domain.name}
-                    </h3>
-                    <p className="text-[14px] text-[var(--text-muted)] mt-1.5">
-                      {domain.description}
-                    </p>
-                  </div>
-                  <a
-                    href={mailto}
-                    className="font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors whitespace-nowrap"
-                  >
-                    Mám zájem →
-                  </a>
-                </div>
-              </FadeIn>
+              <motion.a
+                key={domain.name}
+                href={mailto}
+                variants={itemVariants}
+                className="group grid grid-cols-[60px_1fr_auto] md:grid-cols-[80px_1fr_1.2fr_auto] gap-4 md:gap-8 items-baseline py-7 border-b border-[var(--rule-soft)] cursor-pointer transition-[padding] duration-300 hover:pl-3"
+              >
+                <span className="font-mono text-[11px] text-[var(--ink-mute)] tracking-[0.14em]">
+                  {domain.idx}
+                </span>
+                <span className="font-serif text-[20px] md:text-[24px] text-[var(--ink)] tracking-[-0.01em] group-hover:text-[var(--cream)] transition-colors duration-300">
+                  {domain.name}
+                </span>
+                <span className="hidden md:block font-sans text-[14px] font-light leading-[1.5] text-[var(--ink-dim)]">
+                  {domain.description}
+                </span>
+                <span className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.14em] uppercase text-[var(--ink-dim)] group-hover:text-[var(--cream)] group-hover:gap-3.5 transition-all duration-300 whitespace-nowrap col-start-2 md:col-auto">
+                  Mám zájem <span aria-hidden>→</span>
+                </span>
+              </motion.a>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

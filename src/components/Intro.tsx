@@ -1,64 +1,66 @@
 import { FadeIn } from "./FadeIn";
 
-const STACK = [
-  ["Next.js", "Supabase"],
-  ["TypeScript", "Vercel"],
-  ["Stripe", "Claude Code"],
+const STACK: Array<[string, string]> = [
+  ["Next.js", "15"],
+  ["Supabase", "DB · Auth"],
+  ["TypeScript", "5.4"],
+  ["Vercel", "Deploy"],
+  ["Tailwind", "v4"],
+  ["Stripe", "Payments"],
+  ["Claude Code", "Pair"],
+  ["Postgres", "RLS"],
 ];
 
 export function Intro() {
   return (
-    <section className="py-40">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
-          <div className="md:col-span-4">
-            <FadeIn>
-              <span className="label">Příběh</span>
-              <h2 className="font-serif text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.02em] mt-4">
-                Ne další
-                <br />
-                <span className="text-[var(--text-secondary)]">„AI developer"</span>
-              </h2>
-            </FadeIn>
-          </div>
+    <section className="py-[200px] max-md:py-32">
+      <div className="max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
+        <div className="grid grid-cols-1 md:grid-cols-[35fr_55fr] gap-12 md:gap-24">
+          <FadeIn>
+            <span className="label block mb-8">O mně / 02</span>
+            <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-[1.02] tracking-[-0.02em] m-0">
+              Pár slov <span className="quote">o mně</span>
+            </h2>
+          </FadeIn>
 
-          <div className="md:col-span-7 md:col-start-6 md:mt-16">
-            <FadeIn delay={0.1}>
-              <div className="max-w-[560px] space-y-6 text-[17px] leading-[1.8] text-[var(--text-secondary)]">
-                <p>
-                  Prodával jsem mobily. Pak jsem zjistil, že mě víc baví
-                  stavět produkty než prodávat cizí.
-                </p>
-                <p>
-                  Dneska buduji weby a datové projekty pro český a
-                  slovenský trh. Cílím tam, kde jazyk vytváří přirozenou
-                  bariéru — a kde jeden člověk s AI nástrojem může
-                  vytvořit něco, co by jinak vyžadovalo celý tým.
-                </p>
-                <p>
-                  Ale tady je ten rozdíl: každý projekt, který vidíte níž,
-                  prošel stovkami iterací. Žádný nevznikl jedním promptem.
-                  Žádný nevypadá jako tisíc dalších webů na internetu.
-                </p>
-                <p className="text-[var(--text-primary)]">
-                  To je to, na čem mi záleží.
-                </p>
-              </div>
+          <FadeIn delay={0.1}>
+            <div className="space-y-6">
+              <p
+                className="font-sans text-[18px] leading-[1.6] font-light text-[var(--ink)] m-0"
+                style={{ textWrap: "pretty" } as React.CSSProperties}
+              >
+                Stavím weby a datové projekty pro český a slovenský trh.
+                Většinou sám, většinou s pomocí AI — ale nikdy na jedno
+                kliknutí.
+              </p>
+              <p
+                className="font-sans text-[18px] leading-[1.6] font-light text-[var(--ink-dim)] m-0"
+                style={{ textWrap: "pretty" } as React.CSSProperties}
+              >
+                Každý projekt, který vidíte níže, má za sebou stovky
+                drobných rozhodnutí. Co zobrazit, co schovat, jak pojmenovat
+                tlačítko, odkud brát data, jak s nimi pracovat.
+              </p>
+              <p
+                className="font-sans text-[18px] leading-[1.6] font-light text-[var(--ink-dim)] m-0"
+                style={{ textWrap: "pretty" } as React.CSSProperties}
+              >
+                Na tom záleží víc než na tom, jaký framework jsem použil.
+              </p>
+            </div>
 
-              <div
-                aria-hidden
-                className="mt-10 h-px w-[120px] bg-[var(--accent-dim)]"
-              />
-
-              <div className="mt-6 grid grid-cols-2 gap-x-16 gap-y-3 max-w-[360px]">
-                {STACK.flat().map((tech) => (
-                  <span key={tech} className="label">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
+            <div className="mt-14 pt-8 border-t border-[var(--rule-soft)] grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3">
+              <span className="label block mb-2 col-span-full">
+                Tech stack
+              </span>
+              {STACK.map(([name, version]) => (
+                <div key={name} className="stat-item">
+                  <span>{name}</span>
+                  <span className="num">{version}</span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>

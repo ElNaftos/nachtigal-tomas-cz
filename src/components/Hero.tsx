@@ -1,72 +1,102 @@
-import { FadeIn } from "./FadeIn";
+"use client";
+
+import { motion } from "framer-motion";
+import { AnimatedText } from "./AnimatedText";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center">
-      <div className="w-full px-6 md:px-8 max-w-[1400px] mx-auto md:pl-[10vw]">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-          {/* Levá strana — copy */}
-          <div className="md:col-span-7">
-            <FadeIn>
-              <span className="label">
-                Designer · Developer · Builder
+    <section className="relative min-h-screen flex items-center pt-20 pb-20">
+      <div className="w-full max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
+        <div className="grid grid-cols-1 md:grid-cols-[60fr_40fr] gap-16 md:gap-16 items-center">
+          {/* LEVÁ — copy */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="label mb-14"
+            >
+              Designer · Developer · Builder
+            </motion.div>
+
+            <h1 className="font-serif text-[clamp(72px,11vw,168px)] leading-[0.92] tracking-[-0.025em] m-0 text-[var(--ink)]">
+              <AnimatedText text="Tomáš" />
+              <br />
+              <span className="italic text-[var(--cream)]">
+                <AnimatedText text="Nachtigal" startIndex={5} />
               </span>
-            </FadeIn>
+            </h1>
 
-            <FadeIn delay={0.1}>
-              <h1 className="font-serif text-[clamp(56px,7vw,88px)] font-normal leading-[1.05] tracking-[-0.025em] text-[var(--text-primary)] mt-8">
-                Tomáš
-                <br />
-                Nachtigal
-              </h1>
-            </FadeIn>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: 64 }}
+              transition={{
+                delay: 1.2,
+                duration: 0.6,
+                ease: [0.21, 0.47, 0.32, 0.98],
+              }}
+              className="h-[2px] bg-[var(--cream)] mt-10 mb-8"
+              aria-hidden
+            />
 
-            <FadeIn delay={0.2}>
-              <div
-                aria-hidden
-                className="mt-8 mb-8 h-0.5 w-16 bg-[var(--accent)]"
-              />
-            </FadeIn>
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4, duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="font-sans text-[19px] leading-[1.5] font-light text-[var(--ink)] max-w-[540px] mb-14"
+              style={{ textWrap: "pretty" } as React.CSSProperties}
+            >
+              Weby a datové projekty pro český trh.
+              <br />
+              Každý jiný. Každý od nuly.
+            </motion.p>
 
-            <FadeIn delay={0.3}>
-              <p className="text-[19px] leading-[1.7] text-[var(--text-secondary)] max-w-[440px] font-normal">
-                Stavím weby, které nejdou splést s AI šablonou.
-                <br />
-                Od nápadu po deploy — s daty, logikou a poctivou prací.
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.4}>
-              <div className="label mt-14 flex flex-wrap items-center gap-x-3">
-                <span>Písek, Česko</span>
-                <span aria-hidden>·</span>
-                <span>OSVČ</span>
-                <span aria-hidden>·</span>
-                <span>est. 2024</span>
-              </div>
-            </FadeIn>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.7, duration: 0.5 }}
+              className="meta"
+            >
+              Písek, Česko · OSVČ · Est. 2024
+            </motion.div>
           </div>
 
-          {/* Pravá strana — dekorativní stack čar (desktop only) */}
-          <div className="hidden md:block md:col-span-5">
-            <FadeIn delay={0.3}>
-              <div className="flex flex-col gap-12 pl-8">
-                <div className="h-px bg-[var(--border)] w-[40%]" />
-                <div className="h-px bg-[var(--border)] w-[65%]" />
-                <div className="relative">
-                  <div className="h-px bg-[var(--border)] w-[55%]" />
-                  <span
-                    aria-hidden
-                    className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[var(--accent)]"
-                    style={{ left: "55%" }}
-                  />
-                </div>
-                <div className="h-px bg-[var(--border)] w-[80%]" />
+          {/* PRAVÁ — abstraktní art (desktop only) */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="hidden md:block relative h-[360px] pl-6"
+            aria-hidden
+          >
+            <span className="meta absolute top-0 left-6">Idx / 01</span>
+            <div className="h-full flex flex-col justify-center gap-7">
+              <div className="h-px bg-[var(--rule)] w-[80%]" />
+              <div className="h-px bg-[var(--rule)] w-[55%]" />
+              <div className="h-px bg-[var(--ink-mute)] w-[70%] relative">
+                <span
+                  className="absolute w-2 h-2 rounded-full bg-[var(--cream)]"
+                  style={{ top: "-3.5px", left: "62%" }}
+                />
               </div>
-            </FadeIn>
-          </div>
+              <div className="h-px bg-[var(--rule)] w-[40%]" />
+              <div className="h-px bg-[var(--rule)] w-[55%]" />
+            </div>
+            <span className="meta absolute bottom-0 right-0">N. — 2026</span>
+          </motion.div>
         </div>
       </div>
+
+      {/* Scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 0.6 }}
+        className="absolute left-[clamp(24px,5vw,96px)] bottom-8 hidden md:flex items-center gap-3 text-[var(--ink-mute)]"
+      >
+        <span className="meta">Scroll</span>
+        <span className="w-6 h-px bg-[var(--ink-mute)]" />
+      </motion.div>
     </section>
   );
 }

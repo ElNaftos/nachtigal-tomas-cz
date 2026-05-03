@@ -1,4 +1,5 @@
 export type Domain = {
+  idx: string;
   name: string;
   description: string;
   subject: string;
@@ -6,38 +7,51 @@ export type Domain = {
 
 export const domains: Domain[] = [
   {
-    name: "oční-optika.cz · oční-optik.cz · oční-optiky.cz",
-    description: "Balík tří domén pro oční optiky a kliniky",
+    idx: "A / 01",
+    name: "oční-optika.cz",
+    description:
+      "Bundle 3 domén pro síť optik nebo e-shop s brýlemi. Včetně variant oční-optik.cz a oční-optiky.cz.",
     subject: "Zájem o domény oční-optika",
   },
   {
+    idx: "A / 02",
     name: "zásoby.cz",
-    description: "Jednoslovná generická .cz doména",
+    description:
+      "Slovníková doména. Logistika, sklady, e-commerce, prepper komunita.",
     subject: "Zájem o doménu zásoby.cz",
   },
   {
+    idx: "A / 03",
     name: "osoby.cz",
-    description: "Jednoslovná generická .cz doména",
+    description:
+      "Jedinečné slovo. HR platforma, CRM, public records, networking.",
     subject: "Zájem o doménu osoby.cz",
   },
   {
+    idx: "A / 04",
     name: "volnost.cz",
-    description: "Jednoslovná generická .cz doména",
+    description:
+      "Konceptuální. Cestování, lifestyle, finanční nezávislost, nábor.",
     subject: "Zájem o doménu volnost.cz",
   },
   {
+    idx: "A / 05",
     name: "spravedlnost.cz",
-    description: "Jednoslovná generická .cz doména",
+    description:
+      "Silná hodnotová doména. Právní služby, žurnalistika, advokacie.",
     subject: "Zájem o doménu spravedlnost.cz",
   },
   {
+    idx: "A / 06",
     name: "ornitolog.cz",
-    description: "Niche doména pro ornitologii a birding",
+    description:
+      "Niche, ale silná. Komunita pozorovatelů ptáků, e-shop s vybavením, blog.",
     subject: "Zájem o doménu ornitolog.cz",
   },
   {
+    idx: "A / 07",
     name: "deepstack.cz",
-    description: "Doména pro tech / developer projekty",
+    description: "Tech / dev brand. Poker, AI infrastruktura, full-stack agentura.",
     subject: "Zájem o doménu deepstack.cz",
   },
 ];
