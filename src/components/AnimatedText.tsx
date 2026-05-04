@@ -3,25 +3,24 @@
 import { motion } from "framer-motion";
 
 const letterVariants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { y: "100%" },
   visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
+    y: "0%",
     transition: {
       delay: i * 0.03,
-      duration: 0.4,
-      ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+      duration: 0.5,
+      ease: [0.33, 1, 0.68, 1] as [number, number, number, number],
     },
   }),
 };
 
 type Props = {
   text: string;
-  startIndex?: number;
+  startDelay?: number;
   className?: string;
 };
 
-export function AnimatedText({ text, startIndex = 0, className }: Props) {
+export function AnimatedText({ text, startDelay = 0, className }: Props) {
   return (
     <motion.span
       initial="hidden"
@@ -30,15 +29,26 @@ export function AnimatedText({ text, startIndex = 0, className }: Props) {
       aria-label={text}
     >
       {text.split("").map((char, i) => (
-        <motion.span
+        <span
           key={i}
-          custom={i + startIndex}
-          variants={letterVariants}
           aria-hidden
-          style={{ display: "inline-block", whiteSpace: "pre" }}
+          style={{
+            display: "inline-block",
+            overflow: "hidden",
+            verticalAlign: "bottom",
+            paddingBottom: "0.12em",
+            marginBottom: "-0.12em",
+            lineHeight: "0.92",
+          }}
         >
-          {char === " " ? " " : char}
-        </motion.span>
+          <motion.span
+            custom={i + startDelay}
+            variants={letterVariants}
+            style={{ display: "inline-block" }}
+          >
+            {char === " " ? " " : char}
+          </motion.span>
+        </span>
       ))}
     </motion.span>
   );

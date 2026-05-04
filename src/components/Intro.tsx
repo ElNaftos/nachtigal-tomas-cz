@@ -7,8 +7,16 @@ const STACK: Array<[string, string]> = [
   ["Vercel", "Deploy"],
   ["Tailwind", "v4"],
   ["Stripe", "Payments"],
-  ["Claude Code", "Pair"],
+  ["Claude Code", "AI Dev"],
   ["Postgres", "RLS"],
+  ["GA4", "Analytics"],
+  ["Search Console", "SEO"],
+  ["Meta Ads", "FB · IG"],
+  ["Google Ads", "PPC"],
+  ["Resend", "E-maily"],
+  ["Figma", "Design"],
+  ["Lovable", "Prototypy"],
+  ["Cloudflare", "DNS · CDN"],
 ];
 
 export function Intro() {
@@ -29,9 +37,8 @@ export function Intro() {
                 className="font-sans text-[18px] leading-[1.6] font-light text-[var(--ink)] m-0"
                 style={{ textWrap: "pretty" } as React.CSSProperties}
               >
-                Stavím weby a datové projekty pro český a slovenský trh.
-                Většinou sám, většinou s pomocí AI — ale nikdy na jedno
-                kliknutí.
+                Stavím weby a systémy primárně na míru, ale nejsou mi cizí
+                ani krabicová řešení jako Shoptet či Eshop-rychle a další.
               </p>
               <p
                 className="font-sans text-[18px] leading-[1.6] font-light text-[var(--ink-dim)] m-0"
@@ -39,26 +46,32 @@ export function Intro() {
               >
                 Každý projekt, který vidíte níže, má za sebou stovky
                 drobných rozhodnutí. Co zobrazit, co schovat, jak pojmenovat
-                tlačítko, odkud brát data, jak s nimi pracovat.
+                tlačítko, jakou zvolit vizuální identitu, odkud brát data,
+                jak s nimi pracovat.
               </p>
               <p
                 className="font-sans text-[18px] leading-[1.6] font-light text-[var(--ink-dim)] m-0"
                 style={{ textWrap: "pretty" } as React.CSSProperties}
               >
-                Na tom záleží víc než na tom, jaký framework jsem použil.
+                Záleží mi na detailech, protože věřím, že právě ty stojí
+                za úspěšnými projekty.
               </p>
             </div>
 
-            <div className="mt-14 pt-8 border-t border-[var(--rule-soft)] grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3">
-              <span className="label block mb-2 col-span-full">
-                Tech stack
-              </span>
-              {STACK.map(([name, version]) => (
-                <div key={name} className="stat-item">
-                  <span>{name}</span>
-                  <span className="num">{version}</span>
-                </div>
-              ))}
+            <div className="mt-14 pt-8 border-t border-[var(--rule-soft)]">
+              <span className="label block mb-6">Tech stack</span>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6">
+                {STACK.map(([name, version]) => (
+                  <div key={name} className="flex flex-col gap-1">
+                    <span className="font-mono text-[12px] text-[var(--ink)] leading-tight">
+                      {name}
+                    </span>
+                    <span className="font-mono text-[10px] text-[var(--ink-mute)] leading-tight">
+                      {version}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </FadeIn>
         </div>

@@ -39,7 +39,7 @@ export const projects: Project[] = [
     url: "chytresazeni.cz",
     href: "https://chytresazeni.cz",
     meta: "2025 · Tool · Live",
-    tagline: "Matematika místo tipů od strejdy.",
+    tagline: "Matematické rozpisy pro loterie.",
     description:
       "Nástroj pro hráče Sportky, EuroJackpotu a Extra Renty. Zadáš čísla, systém vygeneruje optimální rozpis. Čistá matematika.",
     stats: [

@@ -16,14 +16,14 @@ export function Hero() {
               transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="label mb-14"
             >
-              Designer · Developer · Builder
+              Tvorba webů · Systémy na míru · Data
             </motion.div>
 
             <h1 className="font-serif text-[clamp(72px,11vw,168px)] leading-[0.92] tracking-[-0.025em] m-0 text-[var(--ink)]">
               <AnimatedText text="Tomáš" />
               <br />
               <span className="italic text-[var(--cream)]">
-                <AnimatedText text="Nachtigal" startIndex={5} />
+                <AnimatedText text="Nachtigal" startDelay={6} />
               </span>
             </h1>
 
@@ -46,9 +46,7 @@ export function Hero() {
               className="font-sans text-[19px] leading-[1.5] font-light text-[var(--ink)] max-w-[540px] mb-14"
               style={{ textWrap: "pretty" } as React.CSSProperties}
             >
-              Weby a datové projekty pro český trh.
-              <br />
-              Každý jiný. Každý od nuly.
+              Weby a systémy na míru.
             </motion.p>
 
             <motion.div
@@ -57,7 +55,7 @@ export function Hero() {
               transition={{ delay: 1.7, duration: 0.5 }}
               className="meta"
             >
-              Písek, Česko · OSVČ · Est. 2024
+              Písek, Česko
             </motion.div>
           </div>
 
@@ -86,17 +84,6 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 0.6 }}
-        className="absolute left-[clamp(24px,5vw,96px)] bottom-8 hidden md:flex items-center gap-3 text-[var(--ink-mute)]"
-      >
-        <span className="meta">Scroll</span>
-        <span className="w-6 h-px bg-[var(--ink-mute)]" />
-      </motion.div>
     </section>
   );
 }
