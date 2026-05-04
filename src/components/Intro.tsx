@@ -1,3 +1,4 @@
+import { AnimatedText } from "./AnimatedText";
 import { FadeIn } from "./FadeIn";
 import { ProfilePhoto } from "./ProfilePhoto";
 import { SectionLabel } from "./SectionLabel";
@@ -30,7 +31,10 @@ export function Intro() {
           <FadeIn>
             <SectionLabel className="mb-8">O mně / 02</SectionLabel>
             <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-[1.02] tracking-[-0.02em] m-0">
-              Pár slov <span className="quote">o mně</span>
+              <AnimatedText text="Pár slov " trigger="view" />
+              <span className="quote">
+                <AnimatedText text="o mně" trigger="view" startDelay={9} />
+              </span>
             </h2>
             <ProfilePhoto />
           </FadeIn>

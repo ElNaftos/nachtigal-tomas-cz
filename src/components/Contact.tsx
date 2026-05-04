@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AnimatedText } from "./AnimatedText";
 import { FadeIn } from "./FadeIn";
 import { SectionLabel } from "./SectionLabel";
 
@@ -16,7 +17,10 @@ export function Contact() {
             Kontakt / 06
           </SectionLabel>
           <h2 className="font-serif text-[clamp(48px,6vw,96px)] leading-none tracking-[-0.025em] m-0 mb-8">
-            Pojďme <span className="it">stavět</span>
+            <AnimatedText text="Pojďme " trigger="view" />
+            <span className="it">
+              <AnimatedText text="stavět" trigger="view" startDelay={7} />
+            </span>
           </h2>
         </FadeIn>
 

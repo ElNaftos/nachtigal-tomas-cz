@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { domains } from "@/data/domains";
+import { AnimatedText } from "./AnimatedText";
 import { FadeIn } from "./FadeIn";
 import { SectionLabel } from "./SectionLabel";
 
@@ -21,7 +22,10 @@ export function Domains() {
             <div>
               <SectionLabel className="mb-7">Domény / 05</SectionLabel>
               <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-none tracking-[-0.02em] m-0">
-                Prémiové české <span className="it">domény</span>
+                <AnimatedText text="Prémiové české " trigger="view" />
+                <span className="it">
+                  <AnimatedText text="domény" trigger="view" startDelay={15} />
+                </span>
               </h2>
             </div>
             <p

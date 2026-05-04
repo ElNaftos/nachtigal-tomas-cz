@@ -1,4 +1,5 @@
 import { projects } from "@/data/projects";
+import { AnimatedText } from "./AnimatedText";
 import { FadeIn } from "./FadeIn";
 import { ProjectItem } from "./ProjectItem";
 
@@ -9,10 +10,13 @@ export function Projects() {
         <FadeIn>
           <div className="flex justify-between items-end mb-[120px] max-md:mb-16 pb-6 border-b border-[var(--rule-soft)] gap-6">
             <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-none tracking-[-0.02em] m-0">
-              Vybrané <span className="it">projekty</span>
+              <AnimatedText text="Vybrané " trigger="view" />
+              <span className="it">
+                <AnimatedText text="projekty" trigger="view" startDelay={8} />
+              </span>
             </h2>
             <div className="meta text-right leading-[1.6]">
-              Projects / 04
+              Projects / 08
               <br />
               2024 — 2026
             </div>

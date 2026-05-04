@@ -1,4 +1,12 @@
-export type ProjectMockKey = "bladers" | "sazeni" | "saun" | "herni";
+export type ProjectMockKey =
+  | "bladers"
+  | "bladers-eu"
+  | "sazeni"
+  | "saun"
+  | "herni"
+  | "racingblood"
+  | "rephone"
+  | "numerotest";
 
 export type Project = {
   number: string;
@@ -12,6 +20,8 @@ export type Project = {
   tags: string[];
   mock: ProjectMockKey;
   accentColor: string;
+  /** True = render menší (sister/varianta projektu) */
+  compact?: boolean;
 };
 
 export const projects: Project[] = [
@@ -34,6 +44,21 @@ export const projects: Project[] = [
     accentColor: "#8b5cf6",
   },
   {
+    number: "01b",
+    name: "Bladers.eu",
+    url: "bladers.eu",
+    href: "https://bladers.eu",
+    meta: "2024 · Sister · Live",
+    tagline: "Verze pro Beyblade komunitu.",
+    description:
+      "Sesterský projekt Bladers.cz zaměřený výhradně na Beyblade — wiki, slovník termínů a komunitní e-shop. Sdílí s Bladers.cz část kódové báze i infrastrukturu.",
+    stats: [],
+    tags: ["Next.js", "Supabase", "Vercel"],
+    mock: "bladers-eu",
+    accentColor: "#8b5cf6",
+    compact: true,
+  },
+  {
     number: "02",
     name: "ChytreSazeni.cz",
     url: "chytresazeni.cz",
@@ -41,10 +66,10 @@ export const projects: Project[] = [
     meta: "2025 · Tool · Live",
     tagline: "Matematické rozpisy pro loterie.",
     description:
-      "Nástroj pro hráče Sportky, EuroJackpotu a Extra Renty. Zadáš čísla, systém vygeneruje optimální rozpis. Čistá matematika.",
+      "Nástroj pro hráče Sportky, EuroJackpotu a Extra Renty. Zadáš čísla, systém vygeneruje optimální rozpis přes covering design — pokrytí maxima kombinací za minimum tiketů. Tři tarify, Stripe platby.",
     stats: [
-      { value: "68 let", label: "dat" },
-      { value: "7 318", label: "tahů" },
+      { value: "3 roky", label: "dat" },
+      { value: "3 hry", label: "loterie" },
       { value: "14", label: "strategií" },
     ],
     tags: ["React", "Vite", "Supabase", "Stripe"],
@@ -59,7 +84,7 @@ export const projects: Project[] = [
     meta: "2025 · Directory · Live",
     tagline: "Všechny české sauny na jedné mapě.",
     description:
-      "Adresář ručně ověřených saun po celém Česku. Filtry podle typu, teploty, ceny a kapacity. Mapa s rychlým náhledem, detail s otevírací dobou a recenzemi.",
+      "Adresář ručně ověřených saun po celém Česku. Filtry podle typu, teploty, ceny a kapacity. Mapa s rychlým náhledem, detail s otevírací dobou. V plánu rozšíření na celou střední Evropu.",
     stats: [
       { value: "207", label: "saun" },
       { value: "14", label: "krajů" },
@@ -75,16 +100,58 @@ export const projects: Project[] = [
     url: "hernicentro.cz",
     href: "https://hernicentro.cz",
     meta: "2026 · E-shop · Redesign",
-    tagline: "Gaming e-shop po redesignu.",
+    tagline: "Gaming e-shop po vizuálním restartu.",
     description:
-      "Redesign gaming e-shopu. Custom homepage, produktové bannery, Google Reviews widget.",
-    stats: [
-      { value: "−42 %", label: "bounce" },
-      { value: "2.1×", label: "conv." },
-      { value: "98", label: "lighthouse" },
-    ],
+      "Vizuální a UX redesign existujícího e-shopu na platformě Eshop-rychle. Custom homepage s herním hero blokem, produktové bannery, integrace Google Reviews widgetu generovaného přes Playwright.",
+    stats: [],
     tags: ["eshop-rychle.cz", "Custom JS", "Playwright"],
     mock: "herni",
     accentColor: "#ef4444",
+  },
+  {
+    number: "05",
+    name: "Racingblood.eu",
+    url: "racingblood.eu",
+    href: "https://racingblood.eu",
+    meta: "2026 · Brand · Live",
+    tagline: "Motosport streetwear vyrobený v EU.",
+    description:
+      "Streetwear značka pro fanoušky motorsportu. Mikiny a trička s vlastním grafickým designem, 100 % bavlna, šité v EU. Kolekce vznikly ve spolupráci se Scuderia Praha Racing, Suzuka 1000KM a v rámci FIM Superbike World Championship.",
+    stats: [
+      { value: "1 850", label: "Kč mikina" },
+      { value: "1 350", label: "Kč triko" },
+      { value: "EU", label: "produkce" },
+    ],
+    tags: ["E-shop", "Brand identity", "Photo direction"],
+    mock: "racingblood",
+    accentColor: "#dc2626",
+  },
+  {
+    number: "06",
+    name: "RePhone.cz",
+    url: "rephone.cz",
+    href: "https://rephone.cz",
+    meta: "2026 · B2B · Landing",
+    tagline: "Druhý život iPhonů — pro firmy.",
+    description:
+      "Landing page a brandová identita pro B2B Mobile s.r.o. — společnost zaměřenou na repasované iPhony pro firemní zákazníky. Minimalistická prezentace, lead form, telefon jako hlavní CTA.",
+    stats: [],
+    tags: ["Landing", "Brand", "Lead form"],
+    mock: "rephone",
+    accentColor: "#3b82f6",
+  },
+  {
+    number: "07",
+    name: "numerotest.online",
+    url: "numerotest.online",
+    href: "https://numerotest.online",
+    meta: "2026 · Tool · Live",
+    tagline: "Numerologie do prohlížeče.",
+    description:
+      "Online numerologický test — uživatel zadá jméno a datum narození, dostane profil osobních čísel s interpretací. Mobile-first rozhraní, anglická lokalizace, postaveno rychlostně přes AI tooling.",
+    stats: [],
+    tags: ["React", "Vite", "Vercel"],
+    mock: "numerotest",
+    accentColor: "#a855f7",
   },
 ];
