@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion";
 
-const WRAPPER_LH = 1.05;
-const PAD_TOP = 0.12; // em
-const PAD_BOTTOM = 0.18; // em
+const WRAPPER_LH = 1.15;
+const PAD_TOP = 0.18; // em — místo pro háčky/čárky
+const PAD_BOTTOM = 0.25; // em — místo pro descendery (g, j, p, y)
 
-// Hero (mount) je pomalejší a dramatičtější. Sekce (view) jsou
-// snappier — fungují líp v kontextu scrollu.
 const TIMING = {
   mount: { stagger: 0.08, duration: 1.1 },
   view: { stagger: 0.05, duration: 0.85 },
@@ -29,7 +27,7 @@ export function AnimatedText({
   const { stagger, duration } = TIMING[trigger];
 
   const letterVariants = {
-    hidden: { y: "115%" },
+    hidden: { y: "130%" },
     visible: (i: number) => ({
       y: "0%",
       transition: {
@@ -57,7 +55,11 @@ export function AnimatedText({
       {...motionProps}
       className={className}
       aria-label={text}
-      style={{ display: "inline-block" }}
+      style={{
+        display: "inline-block",
+        userSelect: "none",
+        WebkitUserSelect: "none",
+      }}
     >
       {text.split("").map((char, i) => (
         <span

@@ -24,16 +24,52 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const SITE_URL = "https://nachtigal-tomas.cz";
+const SITE_DESCRIPTION =
+  "Tvorba webů, systémů na míru a datových projektů. Solo developer z Písku.";
+
 export const metadata: Metadata = {
-  title: "Tomáš Nachtigal — weby a datové projekty",
-  description:
-    "Solo developer z Písku. Stavím weby, micro-SaaS a datové projekty pro český a slovenský trh.",
-  metadataBase: new URL("https://nachtigal-tomas.cz"),
+  title: {
+    default: "Tomáš Nachtigal — weby a systémy na míru",
+    template: "%s — Tomáš Nachtigal",
+  },
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "Tomáš Nachtigal", url: SITE_URL }],
+  creator: "Tomáš Nachtigal",
+  keywords: [
+    "tvorba webů",
+    "webový vývojář Písek",
+    "Next.js vývojář",
+    "datové projekty",
+    "Tomáš Nachtigal",
+    "OSVČ web developer",
+  ],
   openGraph: {
-    title: "Tomáš Nachtigal",
-    description: "Weby a datové projekty pro český trh.",
+    title: "Tomáš Nachtigal — weby a systémy na míru",
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Tomáš Nachtigal",
     type: "website",
     locale: "cs_CZ",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tomáš Nachtigal — weby a systémy na míru",
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
