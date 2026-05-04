@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { domains } from "@/data/domains";
 import { FadeIn } from "./FadeIn";
+import { SectionLabel } from "./SectionLabel";
 
 const EMAIL = "nachtigal.tom@proton.me";
 
@@ -18,7 +19,7 @@ export function Domains() {
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-[35fr_55fr] gap-12 md:gap-24 items-end mb-20">
             <div>
-              <span className="label block mb-7">Domény / 05</span>
+              <SectionLabel className="mb-7">Domény / 05</SectionLabel>
               <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-none tracking-[-0.02em] m-0">
                 Prémiové české <span className="it">domény</span>
               </h2>

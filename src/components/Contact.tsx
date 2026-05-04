@@ -1,13 +1,20 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FadeIn } from "./FadeIn";
+import { SectionLabel } from "./SectionLabel";
 
 const EMAIL = "nachtigal.tom@proton.me";
+const SMOOTH = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export function Contact() {
   return (
     <section className="py-[200px] max-md:py-32 text-center">
       <div className="max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
         <FadeIn>
-          <span className="label block mb-8">Kontakt / 06</span>
+          <SectionLabel className="mb-8 flex justify-center">
+            Kontakt / 06
+          </SectionLabel>
           <h2 className="font-serif text-[clamp(48px,6vw,96px)] leading-none tracking-[-0.025em] m-0 mb-8">
             Pojďme <span className="it">stavět</span>
           </h2>
@@ -25,12 +32,22 @@ export function Contact() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <a
-            href={`mailto:${EMAIL}`}
-            className="email-glow inline-block font-serif text-[clamp(28px,3.2vw,44px)] tracking-[-0.01em] text-[var(--ink)] border-b border-[var(--rule)] pb-2 hover:text-[var(--cream)] hover:border-[var(--cream)] transition-colors duration-300"
-          >
-            {EMAIL}
-          </a>
+          <div className="inline-block relative group">
+            <a
+              href={`mailto:${EMAIL}`}
+              className="email-glow inline-block font-serif text-[clamp(28px,3.2vw,44px)] tracking-[-0.01em] text-[var(--ink)] pb-2 group-hover:text-[var(--cream)] transition-colors duration-300"
+            >
+              {EMAIL}
+            </a>
+            <motion.span
+              aria-hidden
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: 0.6, duration: 1.2, ease: SMOOTH }}
+              className="absolute bottom-0 left-0 right-0 h-px bg-[var(--rule)] origin-left group-hover:bg-[var(--cream)] transition-colors duration-300"
+            />
+          </div>
         </FadeIn>
 
         <FadeIn delay={0.25}>

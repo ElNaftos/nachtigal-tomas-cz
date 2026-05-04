@@ -2,8 +2,14 @@
 
 import { motion } from "framer-motion";
 
+// Wrapper má dostatečný line-box i padding pro háčky a descendery
+// (š, í, á, g, j, p, y) — bez clippingu.
+const WRAPPER_LH = 1.05;
+const PAD_TOP = 0.12; // em
+const PAD_BOTTOM = 0.18; // em
+
 const letterVariants = {
-  hidden: { y: "100%" },
+  hidden: { y: "115%" }, // plně skryto i s padem
   visible: (i: number) => ({
     y: "0%",
     transition: {
@@ -27,6 +33,7 @@ export function AnimatedText({ text, startDelay = 0, className }: Props) {
       animate="visible"
       className={className}
       aria-label={text}
+      style={{ display: "inline-block" }}
     >
       {text.split("").map((char, i) => (
         <span
@@ -35,18 +42,18 @@ export function AnimatedText({ text, startDelay = 0, className }: Props) {
           style={{
             display: "inline-block",
             overflow: "hidden",
-            verticalAlign: "bottom",
-            paddingBottom: "0.12em",
-            marginBottom: "-0.12em",
-            lineHeight: "0.92",
+            verticalAlign: "top",
+            lineHeight: WRAPPER_LH,
+            paddingTop: `${PAD_TOP}em`,
+            paddingBottom: `${PAD_BOTTOM}em`,
           }}
         >
           <motion.span
             custom={i + startDelay}
             variants={letterVariants}
-            style={{ display: "inline-block" }}
+            style={{ display: "inline-block", lineHeight: WRAPPER_LH }}
           >
-            {char === " " ? " " : char}
+            {char === " " ? " " : char}
           </motion.span>
         </span>
       ))}

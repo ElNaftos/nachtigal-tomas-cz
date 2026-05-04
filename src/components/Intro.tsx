@@ -1,5 +1,6 @@
 import { FadeIn } from "./FadeIn";
 import { ProfilePhoto } from "./ProfilePhoto";
+import { SectionLabel } from "./SectionLabel";
 
 const STACK: Array<[string, string]> = [
   ["Next.js", "15"],
@@ -27,7 +28,7 @@ export function Intro() {
         <div className="grid grid-cols-1 md:grid-cols-[40fr_55fr] gap-12 md:gap-20">
           {/* LEVÝ — label, heading, fotka */}
           <FadeIn>
-            <span className="label block mb-8">O mně / 02</span>
+            <SectionLabel className="mb-8">O mně / 02</SectionLabel>
             <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-[1.02] tracking-[-0.02em] m-0">
               Pár slov <span className="quote">o mně</span>
             </h2>
