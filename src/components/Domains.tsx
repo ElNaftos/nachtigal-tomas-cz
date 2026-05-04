@@ -27,9 +27,9 @@ export function Domains() {
               className="font-sans text-[16px] leading-[1.6] font-light text-[var(--ink-dim)] m-0 max-w-[460px]"
               style={{ textWrap: "pretty" } as React.CSSProperties}
             >
-              Sbírka silných českých domén k prodeji nebo dlouhodobému
-              pronájmu. Krátké, slovníkové, snadno zapamatovatelné.
-              Pro projekty, které potřebují důvěryhodný název.
+              Sbírka českých domén k prodeji nebo dlouhodobému pronájmu.
+              Krátké, snadno zapamatovatelné. Pro projekty, které
+              potřebují silný a důvěryhodný základ.
             </p>
           </div>
         </FadeIn>

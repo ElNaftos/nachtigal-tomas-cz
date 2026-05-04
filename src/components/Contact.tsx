@@ -33,8 +33,17 @@ export function Contact() {
           </a>
         </FadeIn>
 
+        <FadeIn delay={0.25}>
+          <a
+            href="tel:+420721419183"
+            className="block mt-8 font-mono text-[14px] tracking-[0.18em] text-[var(--ink-dim)] hover:text-[var(--cream)] transition-colors"
+          >
+            721 419 183
+          </a>
+        </FadeIn>
+
         <FadeIn delay={0.3}>
-          <div className="mt-20 flex flex-wrap justify-center gap-x-8 gap-y-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[var(--ink-dim)]">
+          <div className="mt-16 flex flex-wrap justify-center gap-x-8 gap-y-3 font-mono text-[11px] tracking-[0.18em] uppercase text-[var(--ink-dim)]">
             <a
               href="https://github.com/ElNaftos"
               target="_blank"

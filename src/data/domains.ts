@@ -8,14 +8,14 @@ export type Domain = {
 export const domains: Domain[] = [
   {
     idx: "A / 01",
-    name: "oční-optika.cz",
+    name: "ocni-optika.cz",
     description:
-      "Bundle 3 domén pro síť optik nebo e-shop s brýlemi. Včetně variant oční-optik.cz a oční-optiky.cz.",
+      "Bundle 3 domén pro síť optik nebo e-shop s brýlemi. Včetně variant ocni-optik.cz a ocni-optiky.cz.",
     subject: "Zájem o domény oční-optika",
   },
   {
     idx: "A / 02",
-    name: "zásoby.cz",
+    name: "zasoby.cz",
     description:
       "Slovníková doména. Logistika, sklady, e-commerce, prepper komunita.",
     subject: "Zájem o doménu zásoby.cz",
