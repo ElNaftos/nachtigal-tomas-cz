@@ -1,4 +1,5 @@
 import { FadeIn } from "./FadeIn";
+import { ProfilePhoto } from "./ProfilePhoto";
 
 const STACK: Array<[string, string]> = [
   ["Next.js", "15"],
@@ -23,14 +24,17 @@ export function Intro() {
   return (
     <section className="py-[200px] max-md:py-32">
       <div className="max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
-        <div className="grid grid-cols-1 md:grid-cols-[35fr_55fr] gap-12 md:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-[40fr_55fr] gap-12 md:gap-20">
+          {/* LEVÝ — label, heading, fotka */}
           <FadeIn>
             <span className="label block mb-8">O mně / 02</span>
             <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-[1.02] tracking-[-0.02em] m-0">
               Pár slov <span className="quote">o mně</span>
             </h2>
+            <ProfilePhoto />
           </FadeIn>
 
+          {/* PRAVÝ — text + tech stack */}
           <FadeIn delay={0.1}>
             <div className="space-y-6">
               <p
