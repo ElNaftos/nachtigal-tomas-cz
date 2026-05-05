@@ -1,11 +1,12 @@
-import type { ReactNode } from "react";
+import Image from "next/image";
 
 type Props = {
   url: string;
-  children: ReactNode;
+  imageSrc: string;
+  imageAlt: string;
 };
 
-export function BrowserFrame({ url, children }: Props) {
+export function BrowserFrame({ url, imageSrc, imageAlt }: Props) {
   return (
     <div className="border border-[var(--rule)] bg-[var(--bg-elev)] rounded-[4px] overflow-hidden transition-colors duration-300 hover:border-[var(--ink-mute)]">
       <div className="flex items-center gap-1.5 px-4 py-3 border-b border-[var(--rule)] bg-[#0b0b0e]">
@@ -16,7 +17,16 @@ export function BrowserFrame({ url, children }: Props) {
           {url}
         </span>
       </div>
-      <div className="aspect-[16/10] relative overflow-hidden">{children}</div>
+      <div className="relative">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={1600}
+          height={1331}
+          sizes="(max-width: 768px) 100vw, 600px"
+          className="w-full h-auto block"
+        />
+      </div>
     </div>
   );
 }

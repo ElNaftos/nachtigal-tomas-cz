@@ -1,13 +1,3 @@
-export type ProjectMockKey =
-  | "bladers"
-  | "bladers-eu"
-  | "sazeni"
-  | "saun"
-  | "herni"
-  | "racingblood"
-  | "rephone"
-  | "numerotest";
-
 export type Project = {
   number: string;
   name: string;
@@ -18,7 +8,7 @@ export type Project = {
   description: string;
   stats: Array<{ value: string; label: string }>;
   tags: string[];
-  mock: ProjectMockKey;
+  image: string;
   accentColor: string;
   /** True = render menší (sister/varianta projektu) */
   compact?: boolean;
@@ -40,7 +30,7 @@ export const projects: Project[] = [
       { value: "22K", label: "stránek" },
     ],
     tags: ["Next.js", "Supabase", "Cardmarket API", "Scryfall"],
-    mock: "bladers",
+    image: "/projects/bladers.cz.webp",
     accentColor: "#8b5cf6",
   },
   {
@@ -54,7 +44,7 @@ export const projects: Project[] = [
       "Sesterský projekt Bladers.cz zaměřený výhradně na Beyblade — wiki, slovník termínů a komunitní e-shop. Sdílí s Bladers.cz část kódové báze i infrastrukturu.",
     stats: [],
     tags: ["Next.js", "Supabase", "Vercel"],
-    mock: "bladers-eu",
+    image: "/projects/bladers.eu.webp",
     accentColor: "#8b5cf6",
     compact: true,
   },
@@ -73,7 +63,7 @@ export const projects: Project[] = [
       { value: "14", label: "strategií" },
     ],
     tags: ["React", "Vite", "Supabase", "Stripe"],
-    mock: "sazeni",
+    image: "/projects/chytresazeni.cz.webp",
     accentColor: "#14b8a6",
   },
   {
@@ -91,7 +81,7 @@ export const projects: Project[] = [
       { value: "100 %", label: "ověřeno" },
     ],
     tags: ["Lovable", "Supabase", "Mapbox", "Cloudflare"],
-    mock: "saun",
+    image: "/projects/mapasaun.cz.webp",
     accentColor: "#f59e0b",
   },
   {
@@ -105,7 +95,7 @@ export const projects: Project[] = [
       "Vizuální a UX redesign existujícího e-shopu na platformě Eshop-rychle. Custom homepage s herním hero blokem, produktové bannery, integrace Google Reviews widgetu generovaného přes Playwright.",
     stats: [],
     tags: ["eshop-rychle.cz", "Custom JS", "Playwright"],
-    mock: "herni",
+    image: "/projects/hernicentro.cz.webp",
     accentColor: "#ef4444",
   },
   {
@@ -123,7 +113,7 @@ export const projects: Project[] = [
       { value: "EU", label: "produkce" },
     ],
     tags: ["E-shop", "Brand identity", "Photo direction"],
-    mock: "racingblood",
+    image: "/projects/racingblood.eu.webp",
     accentColor: "#dc2626",
   },
   {
@@ -137,12 +127,12 @@ export const projects: Project[] = [
       "Landing page a brandová identita pro B2B Mobile s.r.o. — společnost zaměřenou na repasované iPhony pro firemní zákazníky. Minimalistická prezentace, lead form, telefon jako hlavní CTA.",
     stats: [],
     tags: ["Landing", "Brand", "Lead form"],
-    mock: "rephone",
+    image: "/projects/rephone.cz.webp",
     accentColor: "#3b82f6",
   },
   {
     number: "07",
-    name: "numerotest.online",
+    name: "Numerotest.online",
     url: "numerotest.online",
     href: "https://numerotest.online",
     meta: "2026 · Tool · Live",
@@ -151,7 +141,7 @@ export const projects: Project[] = [
       "Online numerologický test — uživatel zadá jméno a datum narození, dostane profil osobních čísel s interpretací. Mobile-first rozhraní, anglická lokalizace, postaveno rychlostně přes AI tooling.",
     stats: [],
     tags: ["React", "Vite", "Vercel"],
-    mock: "numerotest",
+    image: "/projects/numerotest.online.webp",
     accentColor: "#a855f7",
   },
 ];

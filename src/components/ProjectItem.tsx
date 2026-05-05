@@ -4,26 +4,7 @@ import { motion } from "framer-motion";
 import { AnimatedText } from "./AnimatedText";
 import { BrowserFrame } from "./BrowserFrame";
 import { FadeIn } from "./FadeIn";
-import { MockBladers } from "./mocks/MockBladers";
-import { MockBladersEu } from "./mocks/MockBladersEu";
-import { MockHerni } from "./mocks/MockHerni";
-import { MockNumerotest } from "./mocks/MockNumerotest";
-import { MockRacingblood } from "./mocks/MockRacingblood";
-import { MockRephone } from "./mocks/MockRephone";
-import { MockSaun } from "./mocks/MockSaun";
-import { MockSazeni } from "./mocks/MockSazeni";
-import type { Project, ProjectMockKey } from "@/data/projects";
-
-const MOCKS: Record<ProjectMockKey, () => React.ReactElement> = {
-  bladers: MockBladers,
-  "bladers-eu": MockBladersEu,
-  sazeni: MockSazeni,
-  saun: MockSaun,
-  herni: MockHerni,
-  racingblood: MockRacingblood,
-  rephone: MockRephone,
-  numerotest: MockNumerotest,
-};
+import type { Project } from "@/data/projects";
 
 type Props = {
   project: Project;
@@ -32,7 +13,6 @@ type Props = {
 
 export function ProjectItem({ project, index }: Props) {
   const isLeft = index % 2 === 0;
-  const Mock = MOCKS[project.mock];
   const compact = project.compact === true;
 
   // Compact varianta = menší vše, bez stats
@@ -91,9 +71,11 @@ export function ProjectItem({ project, index }: Props) {
       {/* Browser */}
       <FadeIn className={`relative z-10 ${isLeft ? "md:order-1" : "md:order-2"}`}>
         <div className={`${browserContainerClass} ${isLeft ? "" : "md:ml-auto"}`}>
-          <BrowserFrame url={project.url}>
-            <Mock />
-          </BrowserFrame>
+          <BrowserFrame
+            url={project.url}
+            imageSrc={project.image}
+            imageAlt={`${project.name} — screenshot`}
+          />
         </div>
       </FadeIn>
 
