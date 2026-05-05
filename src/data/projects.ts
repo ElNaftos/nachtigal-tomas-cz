@@ -56,7 +56,7 @@ export const projects: Project[] = [
     meta: "2025 · Tool · Live",
     tagline: "Matematické rozpisy pro loterie.",
     description:
-      "Nástroj pro hráče Sportky, EuroJackpotu a Extra Renty. Zadáš čísla, systém vygeneruje optimální rozpis — covering design, strukturální rozpisy, hypergraf analýza, predikce na základě kombinatoriky. Komplexní analytické nástroje postavené na reálných datech. Napojeno na loterie-navery.cz. Tři cenové tarify, Stripe platby.",
+      "Nástroj pro hráče Sportky, EuroJackpotu a Extra Renty. Zadáš čísla, systém vygeneruje optimální rozpis — covering design, strukturální rozpisy, hypergraf analýza, predikce na základě kombinatoriky. Komplexní analytické nástroje postavené na reálných datech. Napojeno na www.novaverze.cz. Tři cenové tarify, Stripe platby.",
     stats: [
       { value: "3 roky", label: "dat" },
       { value: "3 hry", label: "loterie" },
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     meta: "2026 · E-shop · Redesign",
     tagline: "Gaming e-shop po vizuálním restartu.",
     description:
-      "Vizuální a UX redesign existujícího e-shopu na platformě Eshop-rychle. Custom homepage s herním hero blokem, produktové bannery, integrace Google Reviews widgetu generovaného přes Playwright.",
+      "Vizuální a UX redesign existujícího e-shopu na platformě Eshop-rychle. Custom homepage s herním hero blokem, produktové bannery, kompletní přestavba kategorií. Vylepšení UX/UI pro zákazníka ale i vyhledávače.",
     stats: [],
     tags: ["eshop-rychle.cz", "Custom JS", "Playwright"],
     image: "/projects/hernicentro.cz.webp",
