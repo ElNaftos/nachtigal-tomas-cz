@@ -31,7 +31,7 @@ export const projects: Project[] = [
     ],
     tags: ["Next.js", "Supabase", "Cardmarket API", "Scryfall"],
     image: "/projects/bladers.eu.webp",
-    accentColor: "#8b5cf6",
+    accentColor: "#8B1A1A",
   },
   {
     number: "01b",
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     ],
     tags: ["React", "Vite", "Supabase", "Stripe"],
     image: "/projects/chytresazeni.cz.webp",
-    accentColor: "#14b8a6",
+    accentColor: "#6DB8A0",
   },
   {
     number: "03",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     ],
     tags: ["Lovable", "Supabase", "Mapbox", "Cloudflare"],
     image: "/projects/mapasaun.cz.webp",
-    accentColor: "#f59e0b",
+    accentColor: "#8A5B33",
   },
   {
     number: "04",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     stats: [],
     tags: ["eshop-rychle.cz", "Custom JS", "Playwright"],
     image: "/projects/hernicentro.cz.webp",
-    accentColor: "#ef4444",
+    accentColor: "#007AFF",
   },
   {
     number: "05",
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     ],
     tags: ["E-shop", "Brand identity", "Photo direction"],
     image: "/projects/racingblood.eu.webp",
-    accentColor: "#dc2626",
+    accentColor: "#C41617",
   },
   {
     number: "06",
@@ -128,7 +128,7 @@ export const projects: Project[] = [
     stats: [],
     tags: ["Landing", "Brand", "Lead form"],
     image: "/projects/rephone.cz.webp",
-    accentColor: "#3b82f6",
+    accentColor: "#377A52",
   },
   {
     number: "07",
@@ -142,6 +142,6 @@ export const projects: Project[] = [
     stats: [],
     tags: ["React", "Vite", "Vercel"],
     image: "/projects/numerotest.online.webp",
-    accentColor: "#a855f7",
+    accentColor: "#EBE7E0",
   },
 ];
