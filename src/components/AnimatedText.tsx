@@ -22,10 +22,9 @@ export function AnimatedText({
 }: Props) {
   const { stagger, duration } = TIMING[trigger];
 
-  // Translate o trochu víc než 100% — kompenzuje padding tak, aby
-  // descender byl plně schovaný v initial stavu.
+  // 110% — kompenzuje wrapper padding tak, aby ascender plně skrytý.
   const letterVariants = {
-    hidden: { y: "112%" },
+    hidden: { y: "110%" },
     visible: (i: number) => ({
       y: "0%",
       transition: {
@@ -59,31 +58,41 @@ export function AnimatedText({
         WebkitUserSelect: "none",
       }}
     >
-      {text.split("").map((char, i) => (
-        <span
-          key={i}
-          aria-hidden
-          style={{
-            display: "inline-block",
-            overflow: "hidden",
-            verticalAlign: "bottom",
-            paddingTop: "0.2em",
-            paddingBottom: "0.1em",
-            whiteSpace: "pre",
-          }}
-        >
+      {/* Jeden mask-wrapper kolem CELÉHO slova — italic letter flourishes
+          se mohou navzájem překrývat bez clippingu na boundary mezi písmeny.
+          Horizontální padding zajistí, že ani slant na začátku/konci slova
+          se neořeže. */}
+      <span
+        aria-hidden
+        style={{
+          display: "inline-block",
+          overflow: "hidden",
+          paddingTop: "0.2em",
+          paddingBottom: "0.15em",
+          paddingLeft: "0.05em",
+          paddingRight: "0.1em",
+          marginLeft: "-0.05em",
+          marginRight: "-0.1em",
+          verticalAlign: "bottom",
+          whiteSpace: "pre",
+          lineHeight: 1.15,
+        }}
+      >
+        {text.split("").map((char, i) => (
           <motion.span
+            key={i}
             custom={i + startDelay}
             variants={letterVariants}
             style={{
               display: "inline-block",
               whiteSpace: "pre",
+              lineHeight: 1.15,
             }}
           >
-            {char === " " ? " " : char}
+            {char === " " ? " " : char}
           </motion.span>
-        </span>
-      ))}
+        ))}
+      </span>
     </motion.span>
   );
 }
