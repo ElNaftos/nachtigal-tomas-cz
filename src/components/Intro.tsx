@@ -3,23 +3,62 @@ import { FadeIn } from "./FadeIn";
 import { ProfilePhoto } from "./ProfilePhoto";
 import { SectionLabel } from "./SectionLabel";
 
-const STACK: Array<[string, string]> = [
-  ["Next.js", "15"],
-  ["Supabase", "DB · Auth"],
-  ["TypeScript", "5.4"],
-  ["Vercel", "Deploy"],
-  ["Tailwind", "v4"],
-  ["Stripe", "Payments"],
-  ["Claude Code", "AI Dev"],
-  ["Postgres", "RLS"],
-  ["GA4", "Analytics"],
-  ["Search Console", "SEO"],
-  ["Meta Ads", "FB · IG"],
-  ["Google Ads", "PPC"],
-  ["Resend", "E-maily"],
-  ["Figma", "Design"],
-  ["Lovable", "Prototypy"],
-  ["Cloudflare", "DNS · CDN"],
+type StackBlock = {
+  label: string;
+  /** Tailwind grid-cols class string — musí být doslovně, kvůli Tailwind purge */
+  cols: string;
+  items: Array<[string, string]>;
+};
+
+const STACK: StackBlock[] = [
+  {
+    label: "Technologie",
+    cols: "grid-cols-2 md:grid-cols-4",
+    items: [
+      ["Next.js", "Framework"],
+      ["React", "UI"],
+      ["TypeScript", "Typový systém"],
+      ["HTML & CSS", "Základ"],
+      ["Tailwind", "Styly"],
+      ["Supabase", "DB · Auth"],
+      ["Vercel", "Deploy"],
+      ["Stripe", "Platby"],
+    ],
+  },
+  {
+    label: "Platformy a nástroje",
+    cols: "grid-cols-2 md:grid-cols-3",
+    items: [
+      ["Shoptet", "E-shopy"],
+      ["Eshop-rychle", "E-shopy"],
+      ["Figma", "Design"],
+      ["Canva", "Grafika"],
+      ["Lovable", "Prototypy"],
+      ["Notion", "Organizace"],
+    ],
+  },
+  {
+    label: "Marketing a analytika",
+    cols: "grid-cols-2 md:grid-cols-5",
+    items: [
+      ["GA4", "Analytics"],
+      ["Search Console", "SEO"],
+      ["Microsoft Clarity", "Heatmapy"],
+      ["Meta Ads", "FB · IG"],
+      ["Google Ads", "PPC"],
+    ],
+  },
+  {
+    label: "AI nástroje",
+    cols: "grid-cols-3 md:grid-cols-5",
+    items: [
+      ["Claude", "Anthropic"],
+      ["ChatGPT", "OpenAI"],
+      ["Gemini", "Google"],
+      ["Perplexity", "Search"],
+      ["Manus", "Agent"],
+    ],
+  },
 ];
 
 export function Intro() {
@@ -67,20 +106,28 @@ export function Intro() {
               </p>
             </div>
 
-            <div className="mt-14 pt-8 border-t border-[var(--rule-soft)]">
-              <span className="label block mb-6">Tech stack</span>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6">
-                {STACK.map(([name, version]) => (
-                  <div key={name} className="flex flex-col gap-1">
-                    <span className="font-mono text-[12px] text-[var(--ink)] leading-tight">
-                      {name}
-                    </span>
-                    <span className="font-mono text-[10px] text-[var(--ink-mute)] leading-tight">
-                      {version}
-                    </span>
+            {/* Tech stack — 4 kategorie */}
+            <div className="mt-14 pt-8 border-t border-[var(--rule-soft)] space-y-12">
+              {STACK.map((block, blockIdx) => (
+                <FadeIn key={block.label} delay={blockIdx * 0.06}>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--ink-mute)] mb-6">
+                    {block.label}
                   </div>
-                ))}
-              </div>
+                  <div className="h-px bg-[var(--rule)] mb-6" />
+                  <div className={`grid ${block.cols} gap-x-8 gap-y-6`}>
+                    {block.items.map(([name, desc]) => (
+                      <div key={name} className="flex flex-col gap-1">
+                        <span className="font-sans font-bold text-[14px] text-[var(--ink)] leading-tight">
+                          {name}
+                        </span>
+                        <span className="font-mono text-[11px] text-[var(--ink-mute)] leading-tight">
+                          {desc}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </FadeIn>
+              ))}
             </div>
           </FadeIn>
         </div>
