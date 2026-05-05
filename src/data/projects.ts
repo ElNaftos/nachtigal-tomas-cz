@@ -30,7 +30,7 @@ export const projects: Project[] = [
       { value: "22K", label: "stránek" },
     ],
     tags: ["Next.js", "Supabase", "Cardmarket API", "Scryfall"],
-    image: "/projects/bladers.cz.webp",
+    image: "/projects/bladers.eu.webp",
     accentColor: "#8b5cf6",
   },
   {
@@ -44,7 +44,7 @@ export const projects: Project[] = [
       "Sesterský projekt Bladers.cz zaměřený výhradně na Beyblade — wiki, slovník termínů a komunitní e-shop. Sdílí s Bladers.cz část kódové báze i infrastrukturu.",
     stats: [],
     tags: ["Next.js", "Supabase", "Vercel"],
-    image: "/projects/bladers.eu.webp",
+    image: "/projects/bladers.cz.webp",
     accentColor: "#8b5cf6",
     compact: true,
   },
