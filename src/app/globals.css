@@ -57,6 +57,18 @@ body::before {
   color: var(--bg);
 }
 
+/* Globální fix pro Instrument Serif nadpisy — háčky/čárky/descendery
+   potřebují prostor i mimo per-letter wrapper z AnimatedText. */
+h1,
+h2,
+h3,
+.headline-xl,
+.headline-lg {
+  line-height: 1.15;
+  padding-top: 0.1em;
+  overflow: visible;
+}
+
 /* Type primitives */
 .label {
   font-family: var(--font-jetbrains-mono), ui-monospace, monospace;

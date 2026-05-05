@@ -2,12 +2,6 @@
 
 import { motion } from "framer-motion";
 
-// Velkorysý wrapper i translate — italic Instrument Serif má vysoké
-// ascendery i hluboké descendery, hlavně u N, g, l, š, í.
-const WRAPPER_LH = 1.3;
-const PAD_TOP = 0.25; // em — pro háčky/čárky/serify
-const PAD_BOTTOM = 0.35; // em — pro descendery (g, j, p, y) + italic flourishes
-
 const TIMING = {
   mount: { stagger: 0.08, duration: 1.1 },
   view: { stagger: 0.05, duration: 0.85 },
@@ -28,8 +22,10 @@ export function AnimatedText({
 }: Props) {
   const { stagger, duration } = TIMING[trigger];
 
+  // Translate o trochu víc než 100% — kompenzuje padding tak, aby
+  // descender byl plně schovaný v initial stavu.
   const letterVariants = {
-    hidden: { y: "150%" },
+    hidden: { y: "112%" },
     visible: (i: number) => ({
       y: "0%",
       transition: {
@@ -70,11 +66,9 @@ export function AnimatedText({
           style={{
             display: "inline-block",
             overflow: "hidden",
-            verticalAlign: "top",
-            lineHeight: WRAPPER_LH,
-            paddingTop: `${PAD_TOP}em`,
-            paddingBottom: `${PAD_BOTTOM}em`,
-            // pre pro space, aby se nekolapsoval
+            verticalAlign: "bottom",
+            paddingTop: "0.2em",
+            paddingBottom: "0.1em",
             whiteSpace: "pre",
           }}
         >
@@ -83,11 +77,10 @@ export function AnimatedText({
             variants={letterVariants}
             style={{
               display: "inline-block",
-              lineHeight: WRAPPER_LH,
               whiteSpace: "pre",
             }}
           >
-            {char === " " ? " " : char}
+            {char === " " ? " " : char}
           </motion.span>
         </span>
       ))}
