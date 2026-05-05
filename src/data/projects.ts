@@ -94,7 +94,7 @@ export const projects: Project[] = [
     description:
       "Vizuální a UX redesign existujícího e-shopu na platformě Eshop-rychle. Custom homepage s herním hero blokem, produktové bannery, kompletní přestavba kategorií. Vylepšení UX/UI pro zákazníka ale i vyhledávače.",
     stats: [],
-    tags: ["eshop-rychle.cz", "Custom JS", "Playwright"],
+    tags: ["eshop-rychle.cz", "UX/UI", "SEO"],
     image: "/projects/hernicentro.cz.webp",
     accentColor: "#007AFF",
   },
