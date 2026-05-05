@@ -31,7 +31,7 @@ export const projects: Project[] = [
     ],
     tags: ["Next.js", "Supabase", "Cardmarket API", "Scryfall"],
     image: "/projects/bladers.eu.webp",
-    accentColor: "#8B1A1A",
+    accentColor: "#8b5cf6",
   },
   {
     number: "01b",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     stats: [],
     tags: ["Next.js", "Supabase", "Vercel"],
     image: "/projects/bladers.cz.webp",
-    accentColor: "#8b5cf6",
+    accentColor: "#8B1A1A",
     compact: true,
   },
   {
