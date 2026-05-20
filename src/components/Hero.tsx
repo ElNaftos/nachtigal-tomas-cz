@@ -40,6 +40,48 @@ export function Hero() {
             </span>
           </h1>
 
+          {/* Row 2 — Col 2: abstraktní čárky vedle nadpisu */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: { staggerChildren: 0.18, delayChildren: 0.5 },
+              },
+            }}
+            className="hidden md:flex md:row-start-2 md:col-start-2 md:pl-6 flex-col justify-center gap-7"
+            aria-hidden
+          >
+            {[
+              { w: "80%", color: "var(--rule)" },
+              { w: "55%", color: "var(--rule)" },
+              { w: "70%", color: "var(--ink-mute)", dot: true },
+              { w: "40%", color: "var(--rule)" },
+              { w: "55%", color: "var(--rule)" },
+            ].map((line, i) => (
+              <motion.div
+                key={i}
+                variants={{
+                  hidden: { width: 0, opacity: 0 },
+                  visible: {
+                    width: line.w,
+                    opacity: 1,
+                    transition: { duration: 1.1, ease: SMOOTH },
+                  },
+                }}
+                className="h-px relative"
+                style={{ background: line.color }}
+              >
+                {line.dot && (
+                  <span
+                    className="absolute w-2 h-2 rounded-full bg-[var(--cream)]"
+                    style={{ top: "-3.5px", left: "62%" }}
+                  />
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+
           {/* Row 3 — Col 1: divider */}
           <motion.div
             initial={{ width: 0 }}
