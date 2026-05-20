@@ -5,7 +5,7 @@ import { ProjectItem } from "./ProjectItem";
 
 export function Projects() {
   return (
-    <section className="pt-[140px] pb-[200px] max-md:pt-24 max-md:pb-32">
+    <section id="projekty" className="pt-[140px] pb-[200px] max-md:pt-24 max-md:pb-32 scroll-mt-20">
       <div className="max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
         <FadeIn>
           <div className="flex justify-between items-end mb-[120px] max-md:mb-16 pb-6 border-b border-[var(--rule-soft)] gap-6">

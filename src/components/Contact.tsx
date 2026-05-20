@@ -10,7 +10,7 @@ const SMOOTH = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export function Contact() {
   return (
-    <section className="py-[200px] max-md:py-32 text-center">
+    <section id="kontakt" className="py-[200px] max-md:py-32 text-center scroll-mt-20">
       <div className="max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
         <FadeIn>
           <SectionLabel className="mb-8 flex justify-center">
