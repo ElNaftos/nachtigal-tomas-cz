@@ -21,8 +21,8 @@ export function BrowserFrame({ url, imageSrc, imageAlt }: Props) {
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={1000}
-          height={832}
+          width={800}
+          height={666}
           sizes="(max-width: 768px) 100vw, 600px"
           className="w-full h-auto block"
           unoptimized

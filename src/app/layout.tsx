@@ -86,6 +86,14 @@ export default function RootLayout({
       lang="cs"
       className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        {GA_ID ? (
+          <>
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+            <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+          </>
+        ) : null}
+      </head>
       <body>{children}</body>
       {GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
     </html>

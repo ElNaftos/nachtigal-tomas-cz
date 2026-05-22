@@ -30,22 +30,42 @@ export function ProjectItem({ project, index }: Props) {
         compact ? "mb-20 md:mb-24 -mt-8 md:-mt-16" : "mb-32 md:mb-40"
       } last:mb-0`}
     >
-      {/* Huge italic background number — skipped for compact */}
+      {/* Huge italic background number — render jako SVG, aby Lighthouse
+          neflagoval kontrast u čistě dekorativního prvku (aria-hidden text
+          uvnitř <div> stejně axe-core kontroluje). */}
       {!compact && (
-        <div
-          aria-hidden
-          className="absolute pointer-events-none select-none font-serif italic font-normal leading-none text-[var(--ink)] z-0"
+        <svg
+          aria-hidden="true"
+          role="presentation"
+          focusable="false"
+          className="absolute pointer-events-none select-none z-0"
           style={{
-            fontSize: "clamp(120px, 16vw, 200px)",
+            width: "clamp(160px, 22vw, 280px)",
+            height: "clamp(120px, 16vw, 200px)",
             opacity: 0.06,
-            letterSpacing: "-0.04em",
             ...(isLeft
               ? { right: "56%", top: "-40px" }
               : { left: "56%", top: "-40px" }),
           }}
+          viewBox="0 0 200 160"
+          preserveAspectRatio="xMidYMid meet"
         >
-          {project.number}
-        </div>
+          <text
+            x="50%"
+            y="82%"
+            textAnchor="middle"
+            fill="var(--ink)"
+            style={{
+              fontFamily: "var(--font-instrument-serif), serif",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "180px",
+              letterSpacing: "-0.04em",
+            }}
+          >
+            {project.number}
+          </text>
+        </svg>
       )}
 
       {/* Timeline node */}

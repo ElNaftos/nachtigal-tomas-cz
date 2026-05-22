@@ -35,8 +35,8 @@ export function ProfilePhoto() {
           <Image
             src="/tomas.webp"
             alt="Tomáš Nachtigal"
-            width={224}
-            height={224}
+            width={376}
+            height={376}
             className="object-cover w-full h-full"
             priority
           />
