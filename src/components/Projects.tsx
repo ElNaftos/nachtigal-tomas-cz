@@ -16,7 +16,7 @@ export function Projects() {
               </span>
             </h2>
             <div className="meta text-right leading-[1.6]">
-              Projects / 08
+              Projects / 09
               <br />
               2024 — 2026
             </div>

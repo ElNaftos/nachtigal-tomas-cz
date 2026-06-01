@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Providers } from "@/components/Providers";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -94,7 +95,9 @@ export default function RootLayout({
           </>
         ) : null}
       </head>
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
       {GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
     </html>
   );

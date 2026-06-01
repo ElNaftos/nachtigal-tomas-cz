@@ -50,6 +50,20 @@ export const projects: Project[] = [
   },
   {
     number: "02",
+    name: "HRS Sanitky",
+    url: "hrs-sanitky.cz",
+    href: "https://hrs-sanitky.cz",
+    meta: "2025 · Healthcare · Live",
+    tagline: "Dopravní zdravotnická služba.",
+    description:
+      "Moderní prezentační web pro zdravotnickou dopravní službu HRS Sanitky. Cílem bylo vytvořit důvěryhodnou a přehlednou online prezentaci, která jasně komunikuje poskytované služby, usnadňuje kontakt se zákazníky a zároveň působí profesionálně v prostředí zdravotnictví. Důraz byl kladen na čistý design, srozumitelnost informací a bezproblémové používání na mobilních zařízeních.",
+    stats: [],
+    tags: ["Next.js", "Tailwind", "Vercel", "Responzivní"],
+    image: "/projects/hrs-sanitky.cz.webp",
+    accentColor: "#3DA94E",
+  },
+  {
+    number: "03",
     name: "ChytreSazeni.cz",
     url: "chytresazeni.cz",
     href: "https://chytresazeni.cz",
@@ -67,7 +81,7 @@ export const projects: Project[] = [
     accentColor: "#6DB8A0",
   },
   {
-    number: "03",
+    number: "04",
     name: "MapaSaun.cz",
     url: "mapasaun.cz",
     href: "https://mapasaun.cz",
@@ -85,7 +99,7 @@ export const projects: Project[] = [
     accentColor: "#8A5B33",
   },
   {
-    number: "04",
+    number: "05",
     name: "HerniCentro.cz",
     url: "hernicentro.cz",
     href: "https://hernicentro.cz",
@@ -99,7 +113,7 @@ export const projects: Project[] = [
     accentColor: "#007AFF",
   },
   {
-    number: "05",
+    number: "06",
     name: "Racingblood.eu",
     url: "racingblood.eu",
     href: "https://racingblood.eu",
@@ -117,7 +131,7 @@ export const projects: Project[] = [
     accentColor: "#C41617",
   },
   {
-    number: "06",
+    number: "07",
     name: "RePhone.cz",
     url: "rephone.cz",
     href: "https://rephone.cz",
@@ -135,7 +149,7 @@ export const projects: Project[] = [
     accentColor: "#377A52",
   },
   {
-    number: "07",
+    number: "08",
     name: "Numerotest.online",
     url: "numerotest.online",
     href: "https://numerotest.online",

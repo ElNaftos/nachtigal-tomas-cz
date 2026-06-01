@@ -51,13 +51,30 @@ export function AnimatedText({
     <motion.span
       {...motionProps}
       className={className}
-      aria-label={text}
       style={{
         display: "inline-block",
         userSelect: "none",
         WebkitUserSelect: "none",
       }}
     >
+      {/* Skutečný text pro čtečky / SEO. `aria-label` na generickém <span>
+          ARIA zakazuje (axe: aria-prohibited-attr), proto sr-only text node
+          a vizuální písmena níže jsou aria-hidden. */}
+      <span
+        style={{
+          position: "absolute",
+          width: 1,
+          height: 1,
+          padding: 0,
+          margin: -1,
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          borderWidth: 0,
+        }}
+      >
+        {text}
+      </span>
       {/* Jeden mask-wrapper kolem CELÉHO slova — italic letter flourishes
           se mohou navzájem překrývat bez clippingu na boundary mezi písmeny.
           Horizontální padding zajistí, že ani slant na začátku/konci slova

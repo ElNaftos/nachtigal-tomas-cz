@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { AnimatedText } from "./AnimatedText";
-import { BrowserFrame } from "./BrowserFrame";
 import { FadeIn } from "./FadeIn";
+import { ProjectImage } from "./ProjectImage";
 import type { Project } from "@/data/projects";
 
 type Props = {
@@ -38,7 +38,7 @@ export function ProjectItem({ project, index }: Props) {
           aria-hidden="true"
           role="presentation"
           focusable="false"
-          className="absolute pointer-events-none select-none z-0"
+          className="hidden md:block absolute pointer-events-none select-none z-0"
           style={{
             width: "clamp(160px, 22vw, 280px)",
             height: "clamp(120px, 16vw, 200px)",
@@ -91,11 +91,7 @@ export function ProjectItem({ project, index }: Props) {
       {/* Browser */}
       <FadeIn className={`relative z-10 ${isLeft ? "md:order-1" : "md:order-2"}`}>
         <div className={`${browserContainerClass} ${isLeft ? "" : "md:ml-auto"}`}>
-          <BrowserFrame
-            url={project.url}
-            imageSrc={project.image}
-            imageAlt={`${project.name} — screenshot`}
-          />
+          <ProjectImage project={project} />
         </div>
       </FadeIn>
 
