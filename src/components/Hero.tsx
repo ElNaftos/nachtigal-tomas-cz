@@ -103,7 +103,8 @@ export function Hero() {
             className="font-sans text-[19px] leading-[1.5] font-light text-[var(--ink)] max-w-[540px] mb-14 md:row-start-4 md:col-start-1"
             style={{ textWrap: "pretty" } as React.CSSProperties}
           >
-            Weby a systémy na míru.
+            Navrhuji a stavím weby, e-shopy a datové nástroje pro firmy,
+            které potřebují funkční digitální produkt, ne jen hezkou stránku.
           </motion.p>
 
           {/* Row 4 — Col 2: Primární CTA "Chci konzultaci" — v úrovni s odstavcem */}

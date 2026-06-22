@@ -20,11 +20,11 @@ export function Domains() {
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-[35fr_55fr] gap-12 md:gap-24 items-end mb-20">
             <div>
-              <SectionLabel className="mb-7">Domény / 05</SectionLabel>
+              <SectionLabel className="mb-7">Vedlejší aktiva / 05</SectionLabel>
               <h2 className="font-serif text-[clamp(40px,4.4vw,64px)] leading-none tracking-[-0.02em] m-0">
-                <AnimatedText text="Prémiové české " trigger="view" />
+                <AnimatedText text="České domény " trigger="view" />
                 <span className="it">
-                  <AnimatedText text="domény" trigger="view" startDelay={15} />
+                  <AnimatedText text="k dispozici" trigger="view" startDelay={13} />
                 </span>
               </h2>
             </div>
@@ -32,9 +32,9 @@ export function Domains() {
               className="font-sans text-[16px] leading-[1.6] font-light text-[var(--ink-dim)] m-0 max-w-[460px]"
               style={{ textWrap: "pretty" } as React.CSSProperties}
             >
-              Sbírka českých domén k prodeji nebo dlouhodobému pronájmu.
-              Krátké, snadno zapamatovatelné. Pro projekty, které
-              potřebují silný a důvěryhodný základ.
+              Kromě vývoje držím několik silných českých domén. Dávají smysl
+              pro nové značky, obsahové projekty nebo akvizici hotového názvu
+              s přirozenou důvěryhodností.
             </p>
           </div>
         </FadeIn>

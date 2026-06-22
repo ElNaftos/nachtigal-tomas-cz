@@ -84,7 +84,7 @@ export function Contact() {
             </a>
             <span aria-hidden className="text-[var(--rule)]">·</span>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/naftos/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--cream)] transition-colors"

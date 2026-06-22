@@ -85,6 +85,7 @@ export default function RootLayout({
   return (
     <html
       lang="cs"
+      data-scroll-behavior="smooth"
       className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
