@@ -2,10 +2,17 @@
 
 import { motion } from "framer-motion";
 import { AnimatedText } from "./AnimatedText";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const SMOOTH = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export function Hero() {
+  const handleNavClick =
+    (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      scrollToSection(id);
+    };
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-20">
       <div className="w-full max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
@@ -110,6 +117,7 @@ export function Hero() {
           {/* Row 4 — Col 2: Primární CTA "Chci konzultaci" — v úrovni s odstavcem */}
           <motion.a
             href="#kontakt"
+            onClick={handleNavClick("kontakt")}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.1, duration: 0.9, ease: SMOOTH }}
@@ -146,6 +154,7 @@ export function Hero() {
           {/* Row 5 — Col 2: Sekundární CTA "Prohlédnout projekty" — vystředěná */}
           <motion.a
             href="#projekty"
+            onClick={handleNavClick("projekty")}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.4, duration: 0.9, ease: SMOOTH }}
@@ -162,7 +171,11 @@ export function Hero() {
 
           {/* MOBILNÍ CTAs — viditelné jen na mobilu, pod popiskem */}
           <div className="md:hidden mt-10 flex flex-col gap-8">
-            <a href="#kontakt" className="group inline-block self-start">
+            <a
+              href="#kontakt"
+              onClick={handleNavClick("kontakt")}
+              className="group inline-block self-start"
+            >
               <span className="relative inline-flex items-baseline gap-3 font-serif text-[clamp(28px,3.2vw,42px)] tracking-[-0.01em] text-[var(--ink)] pb-2 group-hover:text-[var(--cream)] transition-colors duration-300">
                 Chci konzultaci
                 <span
@@ -183,6 +196,7 @@ export function Hero() {
 
             <a
               href="#projekty"
+              onClick={handleNavClick("projekty")}
               className="group self-center inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[0.18em] uppercase text-[var(--ink-dim)] hover:text-[var(--cream)] pb-2 border-b border-[var(--rule-soft)] hover:border-[var(--cream)] transition-colors duration-300"
             >
               Prohlédnout projekty

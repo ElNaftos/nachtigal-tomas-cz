@@ -55,11 +55,6 @@ export function ProjectImage({ project }: Props) {
     { scope: containerRef }
   );
 
-  const handleImageLoad = () => {
-    if (typeof window === "undefined") return;
-    ScrollTrigger.refresh();
-  };
-
   return (
     <a
       ref={containerRef}
@@ -76,7 +71,6 @@ export function ProjectImage({ project }: Props) {
             url={project.url}
             imageSrc={project.image}
             imageAlt={`${project.name} — screenshot`}
-            onImageLoad={handleImageLoad}
           />
         </div>
       </div>
