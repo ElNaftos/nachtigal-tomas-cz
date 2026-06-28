@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!study) return { title: "Projekt nenalezen" };
   const url = `${SITE_URL}/projekty/${study.slug}`;
   return {
-    title: study.title,
+    title: { absolute: study.title },
     description: study.description,
     alternates: { canonical: `/projekty/${study.slug}` },
     openGraph: {

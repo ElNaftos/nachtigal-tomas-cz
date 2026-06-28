@@ -8,7 +8,7 @@ import { knowledgeIndex, knowledgeCards } from "@/data/seo/knowledge";
 const SITE_URL = "https://nachtigal-tomas.cz";
 
 export const metadata: Metadata = {
-  title: knowledgeIndex.title,
+  title: { absolute: knowledgeIndex.title },
   description: knowledgeIndex.description,
   alternates: { canonical: "/znalosti" },
   openGraph: {

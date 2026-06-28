@@ -10,7 +10,7 @@ import { globalFaq } from "@/data/seo/global-faq";
 const SITE_URL = "https://nachtigal-tomas.cz";
 
 export const metadata: Metadata = {
-  title: servicesIndex.title,
+  title: { absolute: servicesIndex.title },
   description: servicesIndex.description,
   alternates: { canonical: "/sluzby" },
   openGraph: {

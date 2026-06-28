@@ -8,7 +8,7 @@ import { projectsIndex, caseCards } from "@/data/seo/cases";
 const SITE_URL = "https://nachtigal-tomas.cz";
 
 export const metadata: Metadata = {
-  title: projectsIndex.title,
+  title: { absolute: projectsIndex.title },
   description: projectsIndex.description,
   alternates: { canonical: "/projekty" },
   openGraph: {

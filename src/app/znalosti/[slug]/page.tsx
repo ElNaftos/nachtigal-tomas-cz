@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!article) return { title: "Článek nenalezen" };
   const url = `${SITE_URL}/znalosti/${article.slug}`;
   return {
-    title: article.title,
+    title: { absolute: article.title },
     description: article.description,
     alternates: { canonical: `/znalosti/${article.slug}` },
     openGraph: {

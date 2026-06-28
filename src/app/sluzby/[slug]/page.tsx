@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!service) return { title: "Služba nenalezena" };
   const url = `${SITE_URL}/sluzby/${service.slug}`;
   return {
-    title: service.title,
+    title: { absolute: service.title },
     description: service.description,
     alternates: { canonical: `/sluzby/${service.slug}` },
     openGraph: {
