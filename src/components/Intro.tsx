@@ -6,7 +6,7 @@ import { TechStack } from "./TechStack";
 
 export function Intro() {
   return (
-    <section className="py-[200px] max-md:py-32">
+    <section id="o-mne" className="py-[200px] max-md:py-32 scroll-mt-20">
       <div className="max-w-[1280px] mx-auto px-[clamp(24px,5vw,96px)]">
         <div className="grid grid-cols-1 md:grid-cols-[40fr_55fr] gap-12 md:gap-20">
           {/* LEVÝ — label, heading, fotka */}

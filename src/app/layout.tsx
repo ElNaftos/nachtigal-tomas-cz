@@ -77,6 +77,62 @@ export const metadata: Metadata = {
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
+/** Globální strukturovaná data — Person + WebSite, dostupná na všech stránkách. */
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Tomáš Nachtigal",
+      url: SITE_URL,
+      image: `${SITE_URL}/tomas.webp`,
+      jobTitle: "Tvůrce webů, e-shopů a digitálních nástrojů",
+      description:
+        "Tomáš Nachtigal navrhuje a staví weby, e-shopy, portfolio stránky a digitální nástroje pro firmy, podnikatele a nové projekty.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Písek",
+        addressCountry: "CZ",
+      },
+      email: "mailto:nachtigal.tom@proton.me",
+      telephone: "+420721419183",
+      knowsAbout: [
+        "tvorba webů",
+        "tvorba e-shopů",
+        "Shoptet",
+        "SEO",
+        "GEO optimalizace",
+        "UX",
+        "AI automatizace",
+        "digitální produkty",
+      ],
+      sameAs: [
+        "https://github.com/ElNaftos",
+        "https://www.linkedin.com/in/tomasnachtigal/",
+        "https://www.instagram.com/naftos/",
+      ],
+      makesOffer: {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Tvorba webů, e-shopů a systémů na míru",
+          areaServed: "CZ",
+        },
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Tomáš Nachtigal",
+      description: SITE_DESCRIPTION,
+      inLanguage: "cs-CZ",
+      publisher: { "@id": `${SITE_URL}/#person` },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -97,6 +153,10 @@ export default function RootLayout({
         ) : null}
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <Providers>{children}</Providers>
       </body>
       {GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
