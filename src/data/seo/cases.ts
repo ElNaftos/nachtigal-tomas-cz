@@ -14,8 +14,8 @@ export const caseCards: CaseCard[] = [
     text: "Obsahový a komunitní web pro sběratele Beyblade, Pokémon a TCG. Projekt stojí hlavně na velké obsahové struktuře, encyklopedii, databázi, SEO a praktických nástrojích pro sběratele.",
   },
   {
-    slug: "hernicentrum-cz",
-    name: "HerniCentrum.cz",
+    slug: "hernicentro-cz",
+    name: "HerniCentro.cz",
     text: "E-shop zaměřený na herní a sběratelský sortiment. Projekt navazuje na obsahové weby a řeší propojení návštěvnosti, důvěry a nákupní cesty.",
   },
   {
@@ -95,14 +95,14 @@ export const cases: DetailPage[] = [
     },
   },
   {
-    slug: "hernicentrum-cz",
-    title: "HerniCentrum.cz | E-shop a sběratelský sortiment",
+    slug: "hernicentro-cz",
+    title: "HerniCentro.cz | E-shop a sběratelský sortiment",
     description:
-      "Případová studie projektu HerniCentrum.cz. E-shopový projekt zaměřený na herní a sběratelský sortiment, důvěru, obsah a nákupní cestu.",
-    h1: "HerniCentrum.cz – e-shop propojený s obsahem a komunitou",
-    crumb: "HerniCentrum.cz",
+      "Případová studie projektu HerniCentro.cz. E-shopový projekt zaměřený na herní a sběratelský sortiment, důvěru, obsah a nákupní cestu.",
+    h1: "HerniCentro.cz – e-shop propojený s obsahem a komunitou",
+    crumb: "HerniCentro.cz",
     lead: [
-      "HerniCentrum.cz je e-shopový projekt zaměřený na herní a sběratelský sortiment.",
+      "HerniCentro.cz je e-shopový projekt zaměřený na herní a sběratelský sortiment.",
       "Důležitá myšlenka projektu je propojit obsah, komunitu a samotný nákup. Nestačí jen mít produkty. U sběratelského sortimentu lidé často hledají informace, vysvětlení, edice, rozdíly, rarity a důvěru v obchod.",
     ],
     blocks: [
@@ -126,7 +126,7 @@ export const cases: DetailPage[] = [
       { kind: "h2", text: "Co projekt ukazuje" },
       {
         kind: "p",
-        text: "HerniCentrum.cz ukazuje, že e-shop může fungovat lépe, když kolem sebe nemá jen reklamu, ale i obsah. U sběratelských témat je důvěra extrémně důležitá. Lidé chtějí vědět, co kupují, proč to má hodnotu a čemu věřit.",
+        text: "HerniCentro.cz ukazuje, že e-shop může fungovat lépe, když kolem sebe nemá jen reklamu, ale i obsah. U sběratelských témat je důvěra extrémně důležitá. Lidé chtějí vědět, co kupují, proč to má hodnotu a čemu věřit.",
       },
     ],
     related: {

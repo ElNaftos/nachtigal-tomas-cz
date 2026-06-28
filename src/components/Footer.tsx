@@ -17,7 +17,7 @@ const columns: { heading: string; links: FooterLink[] }[] = [
     heading: "Projekty",
     links: [
       { label: "Bladers.cz", href: "/projekty/bladers-cz" },
-      { label: "HerniCentrum.cz", href: "/projekty/hernicentrum-cz" },
+      { label: "HerniCentro.cz", href: "/projekty/hernicentro-cz" },
       { label: "MapaSaun.cz", href: "/projekty/mapasaun-cz" },
       { label: "HRS Sanitky", href: "/projekty/hrs-sanitky-cz" },
     ],

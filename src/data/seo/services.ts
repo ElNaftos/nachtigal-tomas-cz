@@ -216,7 +216,7 @@ export const services: DetailPage[] = [
       links: [
         { label: "Shoptet úpravy", href: "/sluzby/shoptet-upravy" },
         { label: "SEO a GEO optimalizace", href: "/sluzby/seo-geo-optimalizace" },
-        { label: "případová studie HerniCentrum.cz", href: "/projekty/hernicentrum-cz" },
+        { label: "případová studie HerniCentro.cz", href: "/projekty/hernicentro-cz" },
       ],
     },
   },

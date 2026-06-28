@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
     // optimizer vrací 402 a obrázky zmizí.
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      // Sjednocení názvu projektu na HerniCentro.cz — stará URL přesměruj.
+      {
+        source: "/projekty/hernicentrum-cz",
+        destination: "/projekty/hernicentro-cz",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
