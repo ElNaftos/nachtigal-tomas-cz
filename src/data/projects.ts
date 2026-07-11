@@ -74,7 +74,7 @@ export const projects: Project[] = [
       "Projekt vychází z více než dvouleté odborné práce mého otce, technického inženýra, který se dlouhodobě zabýval matematickými rozpisy, kombinatorikou a hledáním efektivních způsobů zpracování velkého množství číselných kombinací. Mým úkolem bylo převést jeho výpočty, postupy a matematické modely do srozumitelného digitálního nástroje. Systém pracuje s covering designem, strukturálními rozpisy, hypergrafovou analýzou a dalšími metodami diskrétní matematiky. Loterijní hry zde slouží především jako praktický a snadno pochopitelný datový model. Projekt neslibuje výhru ani se nesnaží obcházet princip náhody. Ukazuje, jak lze složité matematické postupy převést do funkční aplikace, automatizovat výpočty a prezentovat výsledky uživatelsky srozumitelnou formou.",
     stats: [
       { value: "2 roky", label: "odborného vývoje" },
-      { value: "3 matematické modely", label: "pro různé typy zadání" },
+      { value: "3 modely", label: "pro různé typy zadání" },
       { value: "Miliony", label: "vyhodnocovaných kombinací" },
     ],
     tags: ["React", "Vite", "Supabase", "Stripe"],
@@ -148,5 +148,23 @@ export const projects: Project[] = [
     tags: ["Landing", "Shoptet", "E-shop"],
     image: "/projects/rephone.cz.webp",
     accentColor: "#377A52",
+  },
+  {
+    number: "08",
+    name: "Spravedlnost.cz",
+    url: "spravedlnost.cz",
+    href: "https://spravedlnost.cz",
+    meta: "2026 · Datová platforma · Ve vývoji",
+    tagline: "Měření efektivity procesů ve veřejné správě i firmách.",
+    description:
+      "Platforma pro sběr, vyhodnocování a porovnávání dat o fungování konkrétních procesů. Pomáhá odhalit zdržení, zbytečné kroky, nejasné odpovědnosti a další místa, kde vznikají časové nebo finanční ztráty. Na základě získaných dat navrhuje konkrétní možnosti zlepšení a počítá jejich potenciální dopad — úsporu času, nákladů i kapacit. Projekt propojuje chytré formuláře, datové modely, scoring, dashboardy a automatizované reporty.",
+    stats: [
+      { value: "14 krajů", label: "České republiky" },
+      { value: "Veřejný i soukromý sektor", label: "úřady a firmy" },
+      { value: "Časová a finanční úspora", label: "vyčíslený přínos změn" },
+    ],
+    tags: ["Chytré formuláře", "Scoring", "Dashboardy", "Reporty"],
+    image: "/projects/spravedlnost.cz.webp",
+    accentColor: "#3E6DA6",
   },
 ];
