@@ -131,21 +131,21 @@ export function ProjectItem({ project, index }: Props) {
 
             {!compact && project.stats.length > 0 && (
               <div
-                className={`flex gap-8 mb-8 py-4 border-y border-[var(--rule-soft)] ${
+                className={`flex flex-wrap gap-x-8 gap-y-4 mb-8 py-4 border-y border-[var(--rule-soft)] ${
                   !isLeft ? "md:justify-end" : ""
                 }`}
               >
                 {project.stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className={`flex flex-col gap-1.5 whitespace-nowrap ${
+                    className={`flex flex-col gap-1.5 min-w-0 max-w-[180px] ${
                       !isLeft ? "md:text-right" : ""
                     }`}
                   >
-                    <span className="font-serif text-[24px] text-[var(--ink)] leading-none block whitespace-nowrap">
+                    <span className="font-serif text-[24px] text-[var(--ink)] leading-tight block text-balance">
                       {stat.value}
                     </span>
-                    <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--ink-mute)] whitespace-nowrap block">
+                    <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--ink-mute)] block">
                       {stat.label}
                     </span>
                   </div>

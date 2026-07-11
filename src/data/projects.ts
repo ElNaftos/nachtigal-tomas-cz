@@ -67,14 +67,15 @@ export const projects: Project[] = [
     name: "ChytreSazeni.cz",
     url: "chytresazeni.cz",
     href: "https://chytresazeni.cz",
-    meta: "2025 · Tool · Live",
-    tagline: "Matematické rozpisy pro loterie.",
+    meta: "2025 · Datový nástroj · Live",
+    tagline:
+      "Výzkumný nástroj pro kombinatoriku a práci s rozsáhlými číselnými soubory.",
     description:
-      "Nástroj pro hráče Sportky, EuroJackpotu a Extra Renty. Zadáš čísla, systém vygeneruje optimální rozpis — covering design, strukturální rozpisy, hypergraf analýza, predikce na základě kombinatoriky. Komplexní analytické nástroje postavené na reálných datech. Napojeno na www.novaverze.cz. Tři cenové tarify, Stripe platby.",
+      "Projekt vychází z více než dvouleté odborné práce mého otce, technického inženýra, který se dlouhodobě zabýval matematickými rozpisy, kombinatorikou a hledáním efektivních způsobů zpracování velkého množství číselných kombinací. Mým úkolem bylo převést jeho výpočty, postupy a matematické modely do srozumitelného digitálního nástroje. Systém pracuje s covering designem, strukturálními rozpisy, hypergrafovou analýzou a dalšími metodami diskrétní matematiky. Loterijní hry zde slouží především jako praktický a snadno pochopitelný datový model. Projekt neslibuje výhru ani se nesnaží obcházet princip náhody. Ukazuje, jak lze složité matematické postupy převést do funkční aplikace, automatizovat výpočty a prezentovat výsledky uživatelsky srozumitelnou formou.",
     stats: [
-      { value: "3 roky", label: "dat" },
-      { value: "3 hry", label: "loterie" },
-      { value: "3 tarify", label: "předplatné" },
+      { value: "2 roky", label: "odborného vývoje" },
+      { value: "3 matematické modely", label: "pro různé typy zadání" },
+      { value: "Miliony", label: "vyhodnocovaných kombinací" },
     ],
     tags: ["React", "Vite", "Supabase", "Stripe"],
     image: "/projects/chytresazeni.cz.webp",
@@ -147,19 +148,5 @@ export const projects: Project[] = [
     tags: ["Landing", "Shoptet", "E-shop"],
     image: "/projects/rephone.cz.webp",
     accentColor: "#377A52",
-  },
-  {
-    number: "08",
-    name: "Numerotest.online",
-    url: "numerotest.online",
-    href: "https://numerotest.online",
-    meta: "2026 · Tool · Live",
-    tagline: "Numerologie do prohlížeče.",
-    description:
-      "Online numerologický test — uživatel zadá jméno a datum narození, dostane profil osobních čísel s interpretací. Projekt vznikl narychlo pro zábavu s využitím AI toolingu. Mobile-first rozhraní, čtyři jazykové verze: čeština, angličtina, ruština, ukrajinština.",
-    stats: [],
-    tags: ["React", "Vite", "Vercel"],
-    image: "/projects/numerotest.online.webp",
-    accentColor: "#EBE7E0",
   },
 ];
