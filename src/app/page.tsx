@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Intro } from "@/components/Intro";
 import { Projects } from "@/components/Projects";
+import { PortfolioChat } from "@/components/PortfolioChat";
 import { SectionDivider } from "@/components/SectionDivider";
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
       <Projects />
       <SectionDivider />
       <Domains />
+      <SectionDivider />
+      <PortfolioChat />
       <SectionDivider />
       <Contact />
       <Footer />
