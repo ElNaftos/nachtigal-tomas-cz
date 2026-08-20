@@ -165,4 +165,18 @@ export const projects: Project[] = [
     image: "/projects/spravedlnost.cz.webp",
     accentColor: "#3E6DA6",
   },
+  {
+    number: "09",
+    name: "Karolína Šafránková",
+    url: "safrankova-karolina.cz",
+    href: "https://www.safrankova-karolina.cz",
+    meta: "2026 · Portfolio · Live",
+    tagline: "Osobní portfolio pro herečku.",
+    description:
+      "Karolína Šafránková je česká herečka, fotomodelka a dabérka. Cílem bylo vytvořit osobní web, který nebude působit jako běžný životopis, ale jako profesionální castingové portfolio postavené především na obrazu, osobnosti a dosavadní práci. Web propojuje filmové a televizní role, divadelní angažmá, fotografické portfolio, dabing, profesní informace a kontakty do jednoho místa.",
+    stats: [],
+    tags: ["Osobní web", "Portfolio", "Vizuální styl", "Responzivní"],
+    image: "/projects/safrankova-karolina.cz.webp",
+    accentColor: "#B79A7E",
+  },
 ];

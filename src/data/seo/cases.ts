@@ -28,6 +28,11 @@ export const caseCards: CaseCard[] = [
     name: "HRS Sanitky",
     text: "Prezentační web pro službu v oblasti zdravotní dopravy. Důraz na srozumitelnost, důvěru, klidný tón a rychlé pochopení služby.",
   },
+  {
+    slug: "safrankova-karolina-cz",
+    name: "Karolína Šafránková",
+    text: "Osobní castingové portfolio pro herečku, fotomodelku a dabérku. Web postavený na obrazu, osobnosti a dosavadní práci místo běžného životopisu.",
+  },
 ];
 
 export const projectsIndex = {
@@ -214,6 +219,55 @@ export const cases: DetailPage[] = [
       {
         kind: "p",
         text: "HRS Sanitky ukazují, že u služeb nejde jen o vzhled webu. Důležité je i to, jak web působí. U zdravotní dopravy musí být komunikace klidná, věcná a jasná. Návštěvník nemá luštit, co firma dělá. Má to pochopit během pár vteřin.",
+      },
+    ],
+    related: {
+      heading: "Související služby",
+      links: [
+        { label: "Tvorba webů", href: "/sluzby/tvorba-webu" },
+        { label: "Texty a struktura webu", href: "/sluzby/tvorba-webu" },
+        { label: "SEO a GEO optimalizace", href: "/sluzby/seo-geo-optimalizace" },
+      ],
+    },
+  },
+  {
+    slug: "safrankova-karolina-cz",
+    title: "Karolína Šafránková | Osobní portfolio pro herečku",
+    description:
+      "Případová studie webu safrankova-karolina.cz. Osobní castingové portfolio pro herečku, fotomodelku a dabérku — role, divadlo, fotografie, dabing a kontakt na jednom místě.",
+    h1: "Karolína Šafránková – osobní portfolio pro herečku",
+    crumb: "Karolína Šafránková",
+    lead: [
+      "Karolína Šafránková je česká herečka, fotomodelka a dabérka. Cílem bylo vytvořit osobní web, který nebude působit jako běžný životopis, ale jako profesionální castingové portfolio postavené především na obrazu, osobnosti a dosavadní práci.",
+      "Web propojuje filmové a televizní role, divadelní angažmá, fotografické portfolio, dabing, profesní informace a kontakty do jednoho místa. Důležitá byla jednoduchá orientace pro castingové režiséry, produkce nebo fotografy a zároveň vizuální styl, který nechá vyniknout samotnou Karolínu.",
+    ],
+    blocks: [
+      { kind: "h2", text: "Co jsem řešil" },
+      {
+        kind: "ul",
+        items: [
+          "návrh celkového konceptu osobního hereckého portfolia",
+          "vizuální směr inspirovaný filmem, módním editorialem a castingovými weby",
+          "práci s výraznou typografií a velkoformátovými fotografiemi",
+          "prezentaci filmových a televizních rolí",
+          "přehled divadelního angažmá a vybraných inscenací",
+          "fotografické portfolio rozdělené podle typu snímků",
+          "samostatnou prezentaci dabingové tvorby",
+          "profesní profil s nejdůležitějšími informacemi pro casting",
+          "možnost stažení CV přímo z webu",
+          "odkazy na externí profesní profily a reference",
+          "kontaktní část připravenou pro casting a pracovní nabídky",
+          "responzivní podobu webu pro mobilní zařízení",
+        ],
+      },
+      { kind: "h2", text: "Co projekt ukazuje" },
+      {
+        kind: "p",
+        text: "Projekt ukazuje, že dobrý web nemusí stát na množství funkcí. U osobního portfolia je naopak důležité vědět, co upozadit a čemu dát prostor.",
+      },
+      {
+        kind: "p",
+        text: "Výsledkem je web navržený kolem konkrétního člověka a způsobu, jakým se v jeho oboru hledají nové pracovní příležitosti. Místo univerzální šablony vznikla prezentace, která propojuje osobnost, fotografie, zkušenosti a potřebné informace do jednoho vizuálně výrazného celku.",
       },
     ],
     related: {
